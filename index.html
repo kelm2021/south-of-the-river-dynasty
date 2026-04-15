@@ -4011,13 +4011,12 @@ function renderLedger() {
           <div class="fn-connector-line"></div>
         </div>`;
 
-        // ── Mapping: each manager column shows what THEY received ──────────
-        // winnerItems = assets the winner sent  → loser received
-        // loserItems  = assets the loser sent   → winner received
+        // ── Mapping: each manager shows what THEY received ────────────────
+        // winnerItems = assets the winner received
+        // loserItems  = assets the loser received
         const rows = list.map((t, idx) => {
-          // winner received loserItems; loser received winnerItems
-          const colA = buildSide(t.winner, t.loserItems);
-          const colB = buildSide(t.loser,  t.winnerItems);
+          const colA = buildSide(t.winner, t.winnerItems);
+          const colB = buildSide(t.loser,  t.loserItems);
 
           let flowContent = `${colA}${connector}${colB}`;
           if (t.threeWay && t.middle) {
