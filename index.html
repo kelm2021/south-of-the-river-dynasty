@@ -460,6 +460,11 @@ a:hover { color: var(--color-primary-hover); }
   color: var(--color-primary);
   border: 1px solid color-mix(in oklab, var(--color-primary) 30%, transparent);
 }
+.badge-manual {
+  background: color-mix(in oklab, #b8860b 15%, transparent);
+  color: #d4a832;
+  border: 1px solid color-mix(in oklab, #b8860b 30%, transparent);
+}
 
 /* --- SEASON TABS --- */
 .season-tabs {
@@ -1853,7 +1858,7 @@ const LEAGUE_DATA = {
   note: "Started on NFL.com in 2015, moved to MFL in 2016, moved to Sleeper in 2022",
 
   // Champion confirmation from playoff brackets:
-  // 2016: Kent (0001) def. Ben (0006) 151-148 in championship
+  // 2015: Kevin won inaugural season on NFL.com
   // 2017: Evan (0008) def. Ben (0006) 121-115 in championship
   // 2018: Jake (0005) def. Steiners Stallions (0010) 148.9-136.8 in championship
   // 2019: Jake (0005) def. Ben (0006) 141.8-122.3 in championship
@@ -1865,6 +1870,29 @@ const LEAGUE_DATA = {
   // 2025: Diabetic Dynasty (Nhautman) def. Baby Back Gibbs
 
   seasons: [
+    {
+      year: 2015,
+      platform: "manual",
+      champion: "Kevin",
+      championTeam: "Kevin",
+      runnerUp: "Ben",
+      thirdPlace: "Ryan",
+      note: "Inaugural season on NFL.com — Kevin won the first ever championship",
+      standings: [
+        { manager: "Kyle",  team: "Kyle",  w: 10, l: 3, pf: 1572.80 },
+        { manager: "Ryan",  team: "Ryan",  w: 9,  l: 4, pf: 1797.76 },
+        { manager: "Evan",  team: "Evan",  w: 8,  l: 5, pf: 1729.74 },
+        { manager: "Ben",   team: "Ben",   w: 7,  l: 6, pf: 1402.96 },
+        { manager: "Kris",  team: "Kris",  w: 7,  l: 6, pf: 1558.94 },
+        { manager: "Alex",  team: "Alex",  w: 6,  l: 7, pf: 1510.02 },
+        { manager: "Jake",  team: "Jake",  w: 6,  l: 7, pf: 1406.02 },
+        { manager: "Kent",  team: "Kent",  w: 6,  l: 7, pf: 1539.74 },
+        { manager: "Kevin", team: "Kevin", w: 6,  l: 7, pf: 1601.86 },
+        { manager: "Nolan", team: "Nolan", w: 5,  l: 8, pf: 1274.48 },
+        { manager: "Noah",  team: "Noah",  w: 4,  l: 9, pf: 1283.08 },
+        { manager: "Dylan", team: "Dylan", w: 4,  l: 9, pf: 1405.64 },
+      ]
+    },
     {
       year: 2016,
       platform: "MFL",
@@ -2670,6 +2698,222 @@ window.DEEP_ANALYSIS = DEEP_ANALYSIS;
 
 // ── Trade Data (auto-generated from season caches) ────────────────────────
 const TRADE_DATA = [
+  {
+    "year": 2015,
+    "week": 3,
+    "platform": "manual",
+    "sides": [
+      {
+        "manager": "Kent",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Calvin Johnson"
+          }
+        ]
+      },
+      {
+        "manager": "Noah",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Kelvin Benjamin"
+          },
+          {
+            "type": "player",
+            "desc": "Donte Moncrief"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2015,
+    "week": 4,
+    "platform": "manual",
+    "sides": [
+      {
+        "manager": "Kyle",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Doug Martin"
+          }
+        ]
+      },
+      {
+        "manager": "Nolan",
+        "items": [
+          {
+            "type": "player",
+            "desc": "James Jones"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2015,
+    "week": 6,
+    "platform": "manual",
+    "sides": [
+      {
+        "manager": "Kris",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Kevin White"
+          }
+        ]
+      },
+      {
+        "manager": "Kent",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Danny Woodhead"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2015,
+    "week": 6,
+    "platform": "manual",
+    "sides": [
+      {
+        "manager": "Alex",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Lamar Miller"
+          }
+        ]
+      },
+      {
+        "manager": "Evan",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Charcandrick West"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2015,
+    "week": 7,
+    "platform": "manual",
+    "sides": [
+      {
+        "manager": "Kent",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Odell Beckham"
+          }
+        ]
+      },
+      {
+        "manager": "Dylan",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Jeremy Maclin"
+          },
+          {
+            "type": "player",
+            "desc": "Latavius Murray"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2015,
+    "week": 7,
+    "platform": "manual",
+    "sides": [
+      {
+        "manager": "Noah",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Peyton Manning"
+          }
+        ]
+      },
+      {
+        "manager": "Jake",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Alex Smith"
+          },
+          {
+            "type": "player",
+            "desc": "Theo Riddick"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2015,
+    "week": 8,
+    "platform": "manual",
+    "sides": [
+      {
+        "manager": "Alex",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Jarvis Landry"
+          }
+        ]
+      },
+      {
+        "manager": "Ryan",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Javorius Allen"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2015,
+    "week": 9,
+    "platform": "manual",
+    "sides": [
+      {
+        "manager": "Kent",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Ronnie Hillman"
+          },
+          {
+            "type": "player",
+            "desc": "C.J. Anderson"
+          }
+        ]
+      },
+      {
+        "manager": "Alex",
+        "items": [
+          {
+            "type": "player",
+            "desc": "Calvin Johnson"
+          }
+        ]
+      }
+    ]
+  },
   {
     "year": 2016,
     "week": 1,
@@ -6793,7 +7037,9 @@ function renderChampions() {
   const html = LEAGUE_DATA.seasons.slice().reverse().map(season => {
     const champ = canonical(season.champion);
     const isMulti = champCount[champ] > 1;
-    const badgeClass = season.platform === 'MFL' ? 'badge-mfl' : 'badge-sleeper';
+    const badgeClass = season.platform === 'MFL' ? 'badge-mfl' :
+                       season.platform === 'manual' ? 'badge-manual' : 'badge-sleeper';
+    const platformLabel = season.platform === 'manual' ? 'NFL.com' : season.platform;
 
     return `
       <article class="champion-card${isMulti ? ' is-champ-multi' : ''}">
@@ -6802,7 +7048,7 @@ function renderChampions() {
         <div class="champion-card-name">${season.champion}</div>
         <div class="champion-card-team">${season.championTeam}</div>
         <div class="champion-card-note">${season.note || ''}</div>
-        <span class="champion-platform-badge ${badgeClass}">${season.platform}</span>
+        <span class="champion-platform-badge ${badgeClass}">${platformLabel}</span>
       </article>
     `;
   }).join('');
