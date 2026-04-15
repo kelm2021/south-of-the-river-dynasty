@@ -4004,8 +4004,8 @@ function renderLedger() {
         }
 
         const rows = list.map((t, idx) => {
-          const sideA = buildSide(t.winner, t.winnerItems, true);
-          const sideB = buildSide(t.loser, t.loserItems, false);
+          const sideA = buildSide(t.winner, t.loserItems, true);
+          const sideB = buildSide(t.loser, t.winnerItems, false);
           const sideM = t.threeWay ? buildSide(t.middle, t.middleItems, false) : '';
 
           return `<div class="fn-row" data-idx="${idx}">
