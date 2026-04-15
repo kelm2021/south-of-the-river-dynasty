@@ -1325,26 +1325,27 @@ a:hover { color: var(--color-primary-hover); }
 }
 .fn-select:focus { outline: none; border-color: var(--color-primary); }
 
-/* Trade list — no card framing, just rows separated by subtle dividers */
+/* ── Trade Recap list ─────────────────────────────────────────────────────── */
 .fn-list { display: flex; flex-direction: column; }
 
+/* One row per trade */
 .fn-row {
   display: grid;
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: 72px 1fr;
   gap: 0;
-  padding: var(--space-6) 0;
+  padding: var(--space-5) 0;
   border-bottom: 1px solid var(--color-divider);
   align-items: start;
 }
 .fn-row:last-child { border-bottom: none; }
 
-/* Left gutter: date + diff stacked */
+/* Left gutter: date */
 .fn-row-meta {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  padding-right: var(--space-5);
-  padding-top: 3px;
+  padding-right: var(--space-4);
+  padding-top: 2px;
 }
 .fn-date {
   font-size: var(--text-xs);
@@ -1352,56 +1353,41 @@ a:hover { color: var(--color-primary-hover); }
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--color-text-faint);
-  line-height: 1;
-}
-/* fn-diff removed */
-
-/* Platform badge */
-.fn-platform {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 1px 5px;
-  border-radius: var(--radius-sm);
-  background: color-mix(in oklab, var(--color-text-faint) 12%, transparent);
-  color: var(--color-text-faint);
-  border: 1px solid color-mix(in oklab, var(--color-text-faint) 20%, transparent);
-  width: fit-content;
+  line-height: 1.2;
 }
 
-/* Right side: two-column flow (no boxes, no borders on sides) */
+/* Two (or three) equal columns separated by a connector */
 .fn-flow {
   display: grid;
-  grid-template-columns: 1fr 28px 1fr;
+  grid-template-columns: 1fr 24px 1fr;
   gap: 0;
   align-items: start;
 }
-.fn-flow-three { grid-template-columns: 1fr 28px 1fr 28px 1fr; }
+.fn-flow-three { grid-template-columns: 1fr 24px 1fr 24px 1fr; }
 
-/* Connector: just a thin vertical line with a dot — pure structural */
+/* Slim vertical connector */
 .fn-connector {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 18px; /* align with manager name row */
+  padding-top: 16px;
 }
 .fn-connector-line {
   width: 1px;
   background: var(--color-border);
   flex: 1;
-  min-height: 16px;
+  min-height: 14px;
 }
 .fn-connector-dot {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background: var(--color-border);
   flex-shrink: 0;
   margin: 3px 0;
 }
 
-/* Each side — NO border, NO background, clean text-only column */
+/* Each manager's column — neutral, no winner/loser colour */
 .fn-side {
   padding: 0 var(--space-3);
   min-width: 0;
@@ -1412,10 +1398,11 @@ a:hover { color: var(--color-primary-hover); }
 .fn-side-head {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
   gap: var(--space-2);
   margin-bottom: var(--space-3);
 }
+
+/* Manager name — same weight on both sides */
 .fn-manager {
   font-family: var(--font-display);
   font-weight: 800;
@@ -1423,13 +1410,20 @@ a:hover { color: var(--color-primary-hover); }
   color: var(--color-text);
   line-height: 1;
 }
-.fn-side-winner .fn-manager { color: var(--color-primary); }
-.fn-side-pts { display: none; }
+
+/* "received" label */
+.fn-received-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
 
 .fn-nodes { display: flex; flex-direction: column; gap: 1px; }
-.fn-empty { color: var(--color-text-faint); font-size: var(--text-xs); padding: 4px 0; }
+.fn-empty { color: var(--color-text-faint); font-size: var(--text-xs); font-style: italic; padding: 4px 0; }
 
-/* Asset node rows — minimal, no background by default */
+/* Individual asset row */
 .fn-node { position: relative; }
 
 .fn-node-row {
@@ -1455,11 +1449,11 @@ a:hover { color: var(--color-primary-hover); }
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* draft picks slightly dimmed */
 .fn-node-pick .fn-node-label {
   color: var(--color-text-muted);
   font-weight: 400;
 }
-.fn-node-pts { display: none; }
 .fn-chevron {
   font-size: 9px;
   color: var(--color-text-faint);
@@ -1469,69 +1463,83 @@ a:hover { color: var(--color-primary-hover); }
 .fn-node-expandable:hover .fn-chevron,
 .fn-node-open .fn-chevron { color: var(--color-primary); }
 
-/* Tags */
+/* Inline tags */
 .fn-tag {
   font-size: 9px; font-weight: 800;
   letter-spacing: 0.06em; text-transform: uppercase;
   padding: 1px 5px; border-radius: var(--radius-sm);
   flex-shrink: 0; white-space: nowrap;
 }
+/* PICK tag — blue tint */
 .fn-tag-pick {
-  background: color-mix(in oklab, var(--color-primary) 15%, transparent);
+  background: color-mix(in oklab, var(--color-primary) 14%, transparent);
   color: var(--color-primary);
-  border: 1px solid color-mix(in oklab, var(--color-primary) 28%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-primary) 26%, transparent);
 }
+/* FLIP tag — amber, pick was re-traded before being used */
 .fn-tag-flip {
-  background: color-mix(in oklab, #e9a84a 15%, transparent);
-  color: #b07020;
-  border: 1px solid color-mix(in oklab, #e9a84a 28%, transparent);
+  background: color-mix(in oklab, #e9a84a 14%, transparent);
+  color: #9a6a10;
+  border: 1px solid color-mix(in oklab, #e9a84a 26%, transparent);
 }
 [data-theme="dark"] .fn-tag-flip { color: #e9a84a; }
-.fn-tag-drafted {
-  background: color-mix(in oklab, var(--color-accent) 15%, transparent);
-  color: var(--color-accent-dim);
-  border: 1px solid color-mix(in oklab, var(--color-accent) 25%, transparent);
-}
-[data-theme="dark"] .fn-tag-drafted { color: var(--color-accent); }
-.fn-tag-got {
-  background: color-mix(in oklab, var(--color-primary) 12%, transparent);
-  color: var(--color-primary);
-  border: 1px solid color-mix(in oklab, var(--color-primary) 22%, transparent);
-}
-.fn-tag-outcome {
+/* FUTURE tag — grey, pick hasn't been drafted yet */
+.fn-tag-future {
   background: color-mix(in oklab, var(--color-text-faint) 10%, transparent);
   color: var(--color-text-faint);
   border: 1px solid color-mix(in oklab, var(--color-text-faint) 18%, transparent);
 }
 
-/* Expanded branch */
-.fn-branch-wrap { padding-left: var(--space-4); }
-.fn-branch { display: flex; gap: var(--space-2); padding: 2px 0 var(--space-2); }
+/* Expanded branch showing draft outcome */
+.fn-branch-wrap { padding-left: var(--space-5); margin-top: 1px; }
+.fn-branch {
+  display: flex;
+  gap: var(--space-2);
+  padding: 2px 0 var(--space-2);
+}
 .fn-branch-line {
   width: 1px;
   background: var(--color-border);
   margin: 4px 0;
   flex-shrink: 0;
 }
-.fn-branch-content { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
+.fn-branch-content { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+
+/* A single line inside the branch */
 .fn-branch-row {
-  display: flex; align-items: center; gap: var(--space-2);
+  display: flex; align-items: flex-start; gap: var(--space-2);
   padding: 3px 4px; border-radius: var(--radius-sm);
 }
-.fn-branch-outcome { opacity: 0.7; }
 .fn-branch-label {
-  font-size: var(--text-xs); color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
   flex: 1; min-width: 0;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  white-space: normal;          /* allow wrap for long names */
+  line-height: 1.4;
 }
-.fn-branch-pts { display: none; }
+
+/* "DRAFTED" tag — green accent */
+.fn-tag-drafted {
+  background: color-mix(in oklab, var(--color-accent) 14%, transparent);
+  color: var(--color-accent-dim);
+  border: 1px solid color-mix(in oklab, var(--color-accent) 24%, transparent);
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+[data-theme="dark"] .fn-tag-drafted { color: var(--color-accent); }
+
+/* "FLIPPED TO" sub-row */
+.fn-branch-flip {
+  opacity: 0.75;
+  font-size: var(--text-xs);
+}
 
 /* Mobile */
 @media (max-width: 680px) {
-  .fn-row { grid-template-columns: 64px 1fr; }
-  .fn-flow { grid-template-columns: 1fr 20px 1fr; }
+  .fn-row { grid-template-columns: 56px 1fr; }
+  .fn-flow { grid-template-columns: 1fr 18px 1fr; }
   .fn-flow-three { grid-template-columns: 1fr; }
-  .fn-connector { flex-direction: row; padding: var(--space-2) 0; height: 20px; }
+  .fn-connector { flex-direction: row; padding: var(--space-2) 0; height: 18px; }
   .fn-connector-line { flex: 1; width: unset; height: 1px; min-height: unset; }
   .fn-connector-dot { margin: 0 3px; }
 }
@@ -3907,120 +3915,123 @@ function renderLedger() {
 
   let activeLedgerTab = 'trades';
 
-  function verdict(diff) {
-    if (diff >= 800) return 'Highway Robbery';
-    if (diff >= 500) return 'Lopsided';
-    return 'Close';
-  }
-
-  function verdictClass(diff) {
-    if (diff >= 800) return 'ledger-verdict-robbery';
-    if (diff >= 500) return 'ledger-verdict-lopsided';
-    return 'ledger-verdict-close';
-  }
-
   function renderContent(tabId) {
     if (tabId === 'trades') {
-      const trades = [...da.lopsidedTrades].sort((a, b) => b.diff - a.diff);
-      const fmt = n => n.toLocaleString('en-US', {minimumFractionDigits:1, maximumFractionDigits:1});
+      // Sort chronologically by default; lopsidedness sort removed (no longer scoring trades)
+      const trades = [...da.lopsidedTrades];
 
-      // Sort controls
       let sortMode = 'year'; // 'year' | 'manager'
       let filterManager = 'All';
-      const managers = ['All', ...new Set(trades.flatMap(t => [t.winner, t.loser]).filter(Boolean)).values()].sort((a,b)=>a==='All'?-1:a.localeCompare(b));
+      // Collect all unique managers across winner, loser, middle
+      const managers = ['All', ...Array.from(new Set(
+        trades.flatMap(t => [t.winner, t.loser, t.middle].filter(Boolean))
+      )).sort()];
 
       function renderTrades() {
         let list = [...trades];
-        if (filterManager !== 'All') list = list.filter(t => t.winner===filterManager || t.loser===filterManager || t.middle===filterManager);
-        if (sortMode === 'year') list.sort((a,b)=>a.year!==b.year?a.year-b.year:a.week-b.week);
-        else if (sortMode === 'manager') list.sort((a,b)=>a.winner.localeCompare(b.winner));
+        if (filterManager !== 'All') list = list.filter(t =>
+          t.winner === filterManager || t.loser === filterManager || t.middle === filterManager
+        );
+        if (sortMode === 'year') list.sort((a, b) => a.year !== b.year ? a.year - b.year : a.week - b.week);
+        else list.sort((a, b) => a.winner.localeCompare(b.winner) || b.year - a.year);
 
-        function nodeTag(item) {
-          if (item.type==='player') return '';
-          if (item.retraded) return '<span class="fn-tag fn-tag-flip">FLIP</span>';
-          return '<span class="fn-tag fn-tag-pick">PICK</span>';
-        }
-
-        function itemPts(item) {
-          if (item.type==='player') return item.pts;
-          if (item.retraded) return item.pts; // what receiver got back
-          return item.pts; // career pts of drafted player
-        }
-
-        function buildFlowNode(item, showBranch) {
-          const tag = nodeTag(item);
-          const label = item.desc;
+        // ── Render one asset node ──────────────────────────────────────────
+        function buildAssetNode(item) {
           const nodeId = 'fn-' + Math.random().toString(36).slice(2);
+          const isPick = item.type === 'pick';
+          const isFuture = isPick && item.future;
+          const isFlipped = isPick && item.retraded;
+          const hasExpand = isPick && !isFuture; // only expand when we know outcome
 
+          // Choose badge
+          let badge = '';
+          if (isPick && isFlipped)  badge = '<span class="fn-tag fn-tag-flip">FLIP</span>';
+          else if (isPick && isFuture) badge = '<span class="fn-tag fn-tag-future">FUTURE</span>';
+          else if (isPick)             badge = '<span class="fn-tag fn-tag-pick">PICK</span>';
+
+          // Expanded branch content
           let branchHtml = '';
-          if (showBranch && item.type==='pick') {
-            if (item.retraded) {
+          if (hasExpand) {
+            if (isFlipped) {
+              // Pick was re-traded before it was used
+              const retradedInfo = item.retradedTo
+                ? `<span class="fn-branch-flip">Pick traded to <strong>${item.retradedTo}</strong>, who drafted <strong>${item.playerName || '?'}</strong></span>`
+                : '';
               branchHtml = `<div class="fn-branch">
                 <div class="fn-branch-line"></div>
                 <div class="fn-branch-content">
-                  <div class="fn-branch-row">
-                    <span class="fn-tag fn-tag-got">GOT</span>
-                    <span class="fn-branch-label">${item.gotNames||'(picks only)'}</span>
-                  </div>
-                  <div class="fn-branch-row fn-branch-outcome">
-                    <span class="fn-tag fn-tag-outcome">PICK BECAME</span>
-                    <span class="fn-branch-label">${item.playerName} → ${item.retradedTo}</span>
-                  </div>
+                  ${item.gotNames ? `<div class="fn-branch-row"><span class="fn-branch-label"><em>Received back:</em> ${item.gotNames}</span></div>` : ''}
+                  ${retradedInfo ? `<div class="fn-branch-row">${retradedInfo}</div>` : ''}
                 </div>
               </div>`;
             } else {
+              // Pick was used — show who got drafted
+              const player = item.playerName || '—';
               branchHtml = `<div class="fn-branch">
                 <div class="fn-branch-line"></div>
                 <div class="fn-branch-content">
                   <div class="fn-branch-row">
-                    <span class="fn-tag fn-tag-drafted">DRAFTED</span>
-                    <span class="fn-branch-label">${item.playerName||'—'}</span>
+                    <span class="fn-tag fn-tag-drafted">Drafted</span>
+                    <span class="fn-branch-label">${player}</span>
                   </div>
                 </div>
               </div>`;
             }
           }
 
-          return `<div class="fn-node" data-id="${nodeId}">
-            <div class="fn-node-row ${item.type==='pick'?'fn-node-pick':''} ${branchHtml?'fn-node-expandable':''}" ${branchHtml?'data-expand="'+nodeId+'"':''}>
-              ${tag}
-              <span class="fn-node-label">${label}</span>
-              ${branchHtml ? '<span class="fn-chevron">▸</span>' : ''}
+          return `<div class="fn-node">
+            <div class="fn-node-row ${isPick ? 'fn-node-pick' : ''} ${hasExpand ? 'fn-node-expandable' : ''}"${hasExpand ? ` data-expand="${nodeId}"` : ''}>
+              ${badge}
+              <span class="fn-node-label">${item.desc}</span>
+              ${hasExpand ? '<span class="fn-chevron">▸</span>' : ''}
             </div>
-            ${branchHtml ? `<div class="fn-branch-wrap" id="${nodeId}" style="display:none">${branchHtml}</div>` : ''}
+            ${hasExpand ? `<div class="fn-branch-wrap" id="${nodeId}" style="display:none">${branchHtml}</div>` : ''}
           </div>`;
         }
 
-        function buildSide(manager, items, isWinner) {
-          const hasAny = items && items.length;
-          return `<div class="fn-side ${isWinner?'fn-side-winner':'fn-side-loser'}">
+        // ── Render one manager's column ────────────────────────────────────
+        // `received` = the items this manager received (what the other side sent)
+        function buildSide(manager, received) {
+          const items = received && received.length ? received : null;
+          return `<div class="fn-side">
             <div class="fn-side-head">
               <span class="fn-manager">${manager}</span>
+              <span class="fn-received-label">received</span>
             </div>
             <div class="fn-nodes">
-              ${hasAny ? items.map(item => buildFlowNode(item, true)).join('') : '<span class="fn-empty">—</span>'}
+              ${items ? items.map(buildAssetNode).join('') : '<span class="fn-empty">nothing recorded</span>'}
             </div>
           </div>`;
         }
 
+        // ── Build connector markup ─────────────────────────────────────────
+        const connector = `<div class="fn-connector">
+          <div class="fn-connector-line"></div>
+          <div class="fn-connector-dot"></div>
+          <div class="fn-connector-line"></div>
+        </div>`;
+
+        // ── Mapping: each manager column shows what THEY received ──────────
+        // winnerItems = assets the winner sent  → loser received
+        // loserItems  = assets the loser sent   → winner received
         const rows = list.map((t, idx) => {
-          const sideA = buildSide(t.winner, t.loserItems, true);
-          const sideB = buildSide(t.loser, t.winnerItems, false);
-          const sideM = t.threeWay ? buildSide(t.middle, t.middleItems, false) : '';
+          // winner received loserItems; loser received winnerItems
+          const colA = buildSide(t.winner, t.loserItems);
+          const colB = buildSide(t.loser,  t.winnerItems);
+
+          let flowContent = `${colA}${connector}${colB}`;
+          if (t.threeWay && t.middle) {
+            // middleItems = what the middle party received
+            const colM = buildSide(t.middle, t.middleItems);
+            flowContent += `${connector}${colM}`;
+          }
 
           return `<div class="fn-row" data-idx="${idx}">
             <div class="fn-row-meta">
-              <span class="fn-date">${t.year} · Wk ${t.week}</span>
+              <span class="fn-date">${t.year}<br>Wk ${t.week}</span>
             </div>
-            <div class="fn-flow ${t.threeWay?'fn-flow-three':''}">
-              ${sideA}
-              <div class="fn-connector">
-                <div class="fn-connector-line"></div>
-                <div class="fn-connector-dot"></div>
-                <div class="fn-connector-line"></div>
-              </div>
-              ${sideB}
-              ${t.threeWay ? `<div class="fn-connector"><div class="fn-connector-line"></div><div class="fn-connector-dot"></div><div class="fn-connector-line"></div></div>${sideM}` : ''}
+            <div class="fn-flow ${t.threeWay ? 'fn-flow-three' : ''}">
+              ${flowContent}
             </div>
           </div>`;
         }).join('');
@@ -4031,13 +4042,13 @@ function renderLedger() {
               <span class="fn-control-label">Sort</span>
               <div class="fn-pills">
                 <button class="fn-pill ${sortMode==='year'?'active':''}" data-sort="year">Chronological</button>
-                <button class="fn-pill ${sortMode==='manager'?'active':''}" data-sort="manager">Manager</button>
+                <button class="fn-pill ${sortMode==='az'?'active':''}" data-sort="az">A → Z</button>
               </div>
             </div>
             <div class="fn-control-group">
               <span class="fn-control-label">Filter</span>
               <select class="fn-select">
-                ${managers.map(m=>`<option value="${m}" ${m===filterManager?'selected':''}>${m}</option>`).join('')}
+                ${managers.map(m => `<option value="${m}" ${m===filterManager?'selected':''}>${m}</option>`).join('')}
               </select>
             </div>
           </div>
@@ -4057,17 +4068,17 @@ function renderLedger() {
           renderTrades();
         });
 
-        // Expand/collapse branches
+        // Expand/collapse pick branches
         contentEl.querySelectorAll('[data-expand]').forEach(row => {
           row.addEventListener('click', () => {
             const id = row.dataset.expand;
             const wrap = document.getElementById(id);
             if (!wrap) return;
-            const open = wrap.style.display !== 'none';
-            wrap.style.display = open ? 'none' : 'block';
+            const isOpen = wrap.style.display !== 'none';
+            wrap.style.display = isOpen ? 'none' : 'block';
             const chev = row.querySelector('.fn-chevron');
-            if (chev) chev.textContent = open ? '▸' : '▾';
-            row.classList.toggle('fn-node-open', !open);
+            if (chev) chev.textContent = isOpen ? '▸' : '▾';
+            row.classList.toggle('fn-node-open', !isOpen);
           });
         });
       }
