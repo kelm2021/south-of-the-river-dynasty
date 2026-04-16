@@ -949,6 +949,127 @@ a:hover { color: var(--color-primary-hover); }
 }
 .alumni-chip-name { font-weight: 600; color: var(--color-text-muted); }
 .alumni-chip-note { font-size: var(--text-xs); color: var(--color-text-faint); }
+.alumni-chip-info { display: flex; flex-direction: column; gap: 1px; }
+.alumni-chip-photo {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+}
+.alumni-chip-photo img { width: 100%; height: 100%; object-fit: cover; }
+.alumni-chip-initials {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--text-xs); font-weight: 700;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* Manager avatar with photo */
+.manager-avatar-photo {
+  background: transparent;
+  border: 2px solid var(--color-border);
+  overflow: hidden;
+  padding: 0;
+}
+.manager-avatar-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; border-radius: var(--radius-full);
+}
+
+/* Mode badge on card header */
+.manager-mode-badge {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: 3px var(--space-2);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.mode-win-now {
+  background: color-mix(in oklab, #e76f51 15%, transparent);
+  color: #c0392b;
+  border: 1px solid color-mix(in oklab, #e76f51 30%, transparent);
+}
+[data-theme="dark"] .mode-win-now { color: #ff7f6e; }
+.mode-dynasty {
+  background: color-mix(in oklab, var(--color-primary) 15%, transparent);
+  color: var(--color-primary);
+  border: 1px solid color-mix(in oklab, var(--color-primary) 30%, transparent);
+}
+[data-theme="dark"] .mode-dynasty { color: #52c98a; }
+.mode-rebuild {
+  background: color-mix(in oklab, #457b9d 15%, transparent);
+  color: #457b9d;
+  border: 1px solid color-mix(in oklab, #457b9d 30%, transparent);
+}
+[data-theme="dark"] .mode-rebuild { color: #74b3ce; }
+
+/* Strategy badges (position value, rookie/vet) */
+.manager-strategy-badges {
+  display: flex; flex-wrap: wrap; gap: var(--space-2);
+}
+.manager-strategy-badge {
+  font-size: var(--text-xs);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  background: color-mix(in oklab, var(--color-primary) 8%, transparent);
+  color: var(--color-primary);
+  border: 1px solid color-mix(in oklab, var(--color-primary) 18%, transparent);
+  font-weight: 500;
+}
+[data-theme="dark"] .manager-strategy-badge { color: #52c98a; }
+
+/* Rival chip */
+.manager-rival-wrap {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  display: flex; align-items: center; gap: var(--space-2);
+}
+.manager-rival-label { color: var(--color-text-faint); }
+.manager-rival-name { font-weight: 600; color: #c0392b; }
+[data-theme="dark"] .manager-rival-name { color: #ff7f6e; }
+
+/* Trading scale bar */
+.manager-trading-wrap {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.manager-trading-label {
+  display: flex; justify-content: space-between;
+  font-size: var(--text-xs); color: var(--color-text-faint);
+}
+.manager-trading-tag {
+  font-weight: 600; color: var(--color-text-muted);
+}
+.manager-trading-bar {
+  height: 4px;
+  background: var(--color-surface-offset);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.manager-trading-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: 99px;
+  transition: width 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* Role note inside badge */
+.role-note {
+  font-weight: 400;
+  opacity: 0.75;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-left: 4px;
+}
 
 @media (max-width: 600px) {
   .managers-grid { grid-template-columns: 1fr; }
@@ -1612,6 +1733,253 @@ a:hover { color: var(--color-primary-hover); }
   color: #dd6974;
   font-weight: 700;
 }
+
+/* ── Rivalry Tool ─────────────────────────────────────────────────────────── */
+.rivalry-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.rivalry-selector-wrap { flex: 1; min-width: 160px; max-width: 240px; }
+.rivalry-select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b6d67' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  padding-right: var(--space-8);
+}
+.rivalry-select:focus { outline: 2px solid var(--color-primary); outline-offset: 1px; }
+.rivalry-vs-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-faint);
+}
+.rivalry-placeholder {
+  text-align: center;
+  color: var(--color-text-faint);
+  font-style: italic;
+  padding: var(--space-8) 0;
+}
+.rivalry-result-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-6);
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+.rivalry-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+[data-theme="dark"] .rivalry-side { background: var(--color-surface-2); }
+.rivalry-side.winner { border-color: var(--color-primary); box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-primary) 20%, transparent); }
+.rivalry-side-photo {
+  width: 64px; height: 64px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 2px solid var(--color-border);
+}
+.rivalry-side-photo img { width: 100%; height: 100%; object-fit: cover; }
+.rivalry-side-initials {
+  width: 64px; height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-highlight);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+  border: 2px solid var(--color-border);
+}
+.rivalry-side-name {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+}
+.rivalry-side-record {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+}
+.rivalry-side-pf {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+.rivalry-side-crown { font-size: 1.4em; }
+.rivalry-center-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+.rivalry-center-vs {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-faint);
+}
+.rivalry-center-stat {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-align: center;
+}
+.rivalry-history {
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.rivalry-history-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-divider);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.rivalry-history-row {
+  display: grid;
+  grid-template-columns: 60px 1fr auto 1fr 60px;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--color-divider);
+  font-size: var(--text-xs);
+}
+.rivalry-history-row:last-child { border-bottom: none; }
+.rivalry-history-row .rh-year { color: var(--color-text-faint); }
+.rivalry-history-row .rh-score { font-family: var(--font-display); font-weight: 700; text-align: center; }
+.rivalry-history-row .rh-score.win { color: var(--color-primary); }
+.rivalry-history-row .rh-score.loss { color: var(--color-text-faint); }
+.rivalry-history-row .rh-name { font-weight: 500; }
+.rivalry-history-row .rh-name.winner { color: var(--color-text); }
+.rivalry-history-row .rh-name.loser { color: var(--color-text-faint); }
+.rivalry-history-row .rh-week { color: var(--color-text-faint); text-align: center; }
+@media (max-width: 640px) {
+  .rivalry-result-inner { grid-template-columns: 1fr; }
+  .rivalry-center-col { flex-direction: row; }
+}
+
+/* ── Constitution ─────────────────────────────────────────────────────────── */
+.constitution-body {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.const-toc {
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.const-toc-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-divider);
+  padding-bottom: var(--space-2);
+}
+.const-toc-link {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: 2px 0;
+}
+.const-toc-link:hover { text-decoration: underline; }
+[data-theme="dark"] .const-toc-link { color: #52c98a; }
+
+.const-section {
+  margin-bottom: var(--space-12);
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--color-primary);
+}
+.const-section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-5);
+}
+.const-sub-title {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: var(--space-6) 0 var(--space-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.const-sub-sub-title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: var(--space-4) 0 var(--space-2);
+  padding-left: var(--space-4);
+}
+.const-p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-2);
+}
+.const-p.const-underline { text-decoration: underline; }
+.const-p.const-note { font-style: italic; }
+.const-list {
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+.const-list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-1);
+}
+.const-table {
+  border-collapse: collapse;
+  margin: var(--space-3) 0 var(--space-3) var(--space-4);
+}
+.const-table td {
+  padding: var(--space-1) var(--space-4) var(--space-1) 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.const-table td:first-child { font-weight: 600; min-width: 60px; }
+.const-link {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+[data-theme="dark"] .const-link { color: #52c98a; }
 </style>
 </head>
 <body>
@@ -1645,6 +2013,8 @@ a:hover { color: var(--color-primary-hover); }
         <a href="#vault" class="nav-link">Vault</a>
         <a href="#stats" class="nav-link">Stats</a>
         <a href="#ledger" class="nav-link">Ledger</a>
+        <a href="#rivalry" class="nav-link">Rivalry</a>
+        <a href="#constitution" class="nav-link">Rules</a>
       </nav>
 
       <div class="header-actions">
@@ -1828,6 +2198,193 @@ a:hover { color: var(--color-primary-hover); }
       </div>
       <div class="ledger-tabs" id="ledger-tabs"></div>
       <div class="ledger-content" id="ledger-content"></div>
+    </div>
+  </section>
+
+  <!-- RIVALRY TOOL -->
+  <section class="section section-alt" id="rivalry">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Rivalry Central</h2>
+        <p class="section-sub">Head-to-head records across all 10+ seasons</p>
+      </div>
+      <div class="rivalry-controls">
+        <div class="rivalry-selector-wrap">
+          <select id="rivalry-manager1" class="rivalry-select"></select>
+        </div>
+        <div class="rivalry-vs-label">vs</div>
+        <div class="rivalry-selector-wrap">
+          <select id="rivalry-manager2" class="rivalry-select"></select>
+        </div>
+      </div>
+      <div class="rivalry-result" id="rivalry-result">
+        <p class="rivalry-placeholder">Select two managers to see their all-time matchup history.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSTITUTION -->
+  <section class="section" id="constitution">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">League Constitution</h2>
+        <p class="section-sub">The rules that govern the South of the River Dynasty</p>
+      </div>
+      <div class="constitution-body">
+
+        <nav class="const-toc">
+          <div class="const-toc-title">Table of Contents</div>
+          <a class="const-toc-link" href="#const-s1">Section 1: Roster</a>
+          <a class="const-toc-link" href="#const-s2">Section 2: Drafting</a>
+          <a class="const-toc-link" href="#const-s3">Section 3: Scoring System</a>
+          <a class="const-toc-link" href="#const-s4">Section 4: Postseason</a>
+          <a class="const-toc-link" href="#const-s5">Section 5: Tanking Policy</a>
+          <a class="const-toc-link" href="#const-s6">Section 6: Replacing Managers</a>
+          <a class="const-toc-link" href="#const-s7">Section 7: League Finances</a>
+        </nav>
+
+        <div class="const-section" id="const-s1">
+          <h3 class="const-section-title">Section 1: Roster</h3>
+
+          <h4 class="const-sub-title" id="const-1-1">1.1 Positional Breakdown</h4>
+          <p class="const-p">28 Total Players.</p>
+          <p class="const-p const-underline">Starters (10):</p>
+          <ul class="const-list">
+            <li>QB</li>
+            <li>RB</li>
+            <li>RB</li>
+            <li>WR</li>
+            <li>WR</li>
+            <li>TE</li>
+            <li>FLEX (RB/WR/TE)</li>
+            <li>FLEX (RB/WR)</li>
+            <li>D/ST</li>
+            <li>K</li>
+          </ul>
+          <p class="const-p">18 Bench spots (expanded by 5 between the rookie draft and the start of regular season).</p>
+          <p class="const-p">1 IR spot (player must be labeled as IR, Out, or Covid in the Sleeper app).</p>
+
+          <h5 class="const-sub-sub-title" id="const-1-1-1">1.1.1 Position Maximums</h5>
+          <table class="const-table">
+            <tbody>
+              <tr><td>QB</td><td>3 active, 5 total</td></tr>
+              <tr><td>RB</td><td>20</td></tr>
+              <tr><td>WR</td><td>20</td></tr>
+              <tr><td>TE</td><td>10</td></tr>
+              <tr><td>D/ST</td><td>3</td></tr>
+              <tr><td>K</td><td>3</td></tr>
+            </tbody>
+          </table>
+
+          <h4 class="const-sub-title" id="const-1-2">1.2 Trading</h4>
+          <p class="const-p">Trading of players and draft picks (up to 3 drafts away) are allowed. Trades will process immediately and will be reversed if vetoed or under investigation for collusion. Tradable assets include players, draft picks, and FAAB $.</p>
+
+          <h5 class="const-sub-sub-title" id="const-1-2-1">1.2.1 Trade Collusion</h5>
+          <p class="const-p">If any owners are suspected of accepting or offering bribes to enhance their or another owner's team via trade, trading any assets other than fantasy players, draft picks, or FAAB $, or otherwise found guilty of engaging in any form of collusion*, all parties involved in the trade will be subject to punishment:</p>
+          <ul class="const-list">
+            <li><strong>First Offense</strong> – Immediate reduction of FAAB budget by 80%</li>
+            <li><strong>Second Offense</strong> – Immediate freeze on all transaction types for the next 18 weeks of regular season and playoff games, including trades and waiver wire bids</li>
+            <li><strong>Third Offense</strong> – A league meeting of all members not involved in any of the improper trades/activity will take place to discuss next steps</li>
+          </ul>
+          <p class="const-p">All trades found guilty of collusion will be reversed/denied. If the trade affected the outcome of previous games, those results will be revised.</p>
+          <p class="const-p const-note">*Collusion includes the organizing of veto votes against an acceptable trade.</p>
+          <p class="const-p">The commissioner will err on the side of letting owners manage their teams as they see fit. Any collusion will need to be clear and obvious. The commissioner reserves the right to at the very least assess the thinking of any team involved in a heavily lopsided trade.</p>
+
+          <h5 class="const-sub-sub-title" id="const-1-2-2">1.2.2 Lending Players Prohibition</h5>
+          <p class="const-p">Any player traded from a team may not be re-acquired via trade within 6 weeks of the original trade. Any teams involved in this behavior will be subject to the aforementioned collusion punishments.</p>
+
+          <h5 class="const-sub-sub-title" id="const-1-2-3">1.2.3 Trade Deadline</h5>
+          <p class="const-p">The trade deadline will be set for the Saturday of the Week 11 games of the NFL season.</p>
+
+          <h5 class="const-sub-sub-title" id="const-1-2-4">1.2.4 Trade Restrictions</h5>
+          <p class="const-p">You may not trade draft picks that are more than 3 drafts away. For example, during the 2021 season you cannot trade any picks in or after the 2025 draft. You may only trade FAAB $ from the current season.</p>
+
+          <h5 class="const-sub-sub-title" id="const-1-2-5">1.2.5 Veto / Trade Process</h5>
+          <p class="const-p">A total of 7 veto votes are required to veto a trade. Vetoes are only appropriate in instances of collusion or an egregious mismatch of value (i.e. CMC for a backup kicker). Not liking a trade does not warrant a veto.</p>
+
+          <h4 class="const-sub-title" id="const-1-3">1.3 Waiver Wire</h4>
+          <p class="const-p">FAAB waiver wire system. Each team begins the season with $100. $0 bids are allowed. Bids process Thursdays and Sundays at 9 AM EST. FAAB budgets reset each season in January.</p>
+        </div>
+
+        <div class="const-section" id="const-s2">
+          <h3 class="const-section-title">Section 2: Drafting</h3>
+
+          <h4 class="const-sub-title" id="const-2-1">2.1 Draft Order</h4>
+          <p class="const-p">The draft order each year will be a linear draft in reverse order of the previous year's regular season standings.</p>
+
+          <h4 class="const-sub-title" id="const-2-2">2.2 Rookie Drafts</h4>
+          <p class="const-p">Rookie drafts consist of 3 rounds of drafting, with 5 minutes allotted for each pick. To make room for incoming players, benches will be expanded by 5 spots. These spots will be removed in mid-August, at which point you will need to have cut the necessary players.</p>
+          <p class="const-p">Any spots not filled during the draft can be filled immediately afterward from the waiver wire.</p>
+
+          <h4 class="const-sub-title" id="const-2-3">2.3 Draft Day Trades</h4>
+          <p class="const-p">If a trade is being made during the draft, one or both parties can alert the commissioner to pause the draft to allow extra time to negotiate.</p>
+        </div>
+
+        <div class="const-section" id="const-s3">
+          <h3 class="const-section-title">Section 3: Scoring System</h3>
+
+          <h4 class="const-sub-title" id="const-3-1">3.1 Scoring System</h4>
+          <p class="const-p">The league scoring system is listed on the Sleeper fantasy app (for the most part it follows typical 0.5 PPR scoring). The scoring system will never change without a majority league vote.</p>
+        </div>
+
+        <div class="const-section" id="const-s4">
+          <h3 class="const-section-title">Section 4: Postseason</h3>
+
+          <h4 class="const-sub-title" id="const-4-1">4.1 Playoffs</h4>
+          <p class="const-p">At the end of the season 6 teams will make the playoffs. The first round commences in Week 15. Each team that wins their division and the 4 wild card teams with the best records will receive a playoff berth. The 2 division winners receive a bye in the first round. Each playoff matchup lasts one week and the winner advances. Week 18 will not be used.</p>
+
+          <h4 class="const-sub-title" id="const-4-2">4.2 Seeding Tiebreakers</h4>
+          <p class="const-p">If two teams finish with the same record, the tiebreakers go as follows:</p>
+          <ol class="const-list">
+            <li>Points For</li>
+            <li>Head-to-Head Record</li>
+            <li>Division Record</li>
+            <li>Total Points Against</li>
+            <li>Coin Flip</li>
+            <li>Duel to the death</li>
+          </ol>
+        </div>
+
+        <div class="const-section" id="const-s5">
+          <h3 class="const-section-title">Section 5: Tanking Policy</h3>
+
+          <h4 class="const-sub-title" id="const-5-1">5.1 League Tanking Policy</h4>
+          <p class="const-p">No team may intentionally leave starting roster spots empty. Any evidence of intentionally leaving roster spots empty in order to improve your draft position may be subject to punishment, including but not limited to the forfeiture of draft selections.</p>
+        </div>
+
+        <div class="const-section" id="const-s6">
+          <h3 class="const-section-title">Section 6: Replacing Managers</h3>
+
+          <h4 class="const-sub-title" id="const-6-1">6.1 Removing Managers</h4>
+          <p class="const-p">Short of continuously failing to set a valid lineup, or confirmed collusion, no manager can be removed against their will. Participation through the league chat, trade offers, and the waiver wire is strongly encouraged but is generally not grounds for removal.</p>
+
+          <h4 class="const-sub-title" id="const-6-2">6.2 Replacing Managers</h4>
+          <p class="const-p">When a manager needs to be replaced, the commissioners will try to find a suitable candidate with some connection to at least a portion of the existing managers. Priority will be placed on managers who are eager to take on a dynasty commitment and will be very active within the league.</p>
+
+          <h4 class="const-sub-title" id="const-6-3">6.3 Replacement Incentive</h4>
+          <p class="const-p">In the event that a manager chooses to quit the league or is removed by a commissioner, an incoming manager is offered a 50% reduction on their first year buy-in.</p>
+        </div>
+
+        <div class="const-section" id="const-s7">
+          <h3 class="const-section-title">Section 7: League Finances</h3>
+
+          <h4 class="const-sub-title" id="const-7-1">7.1 League Dues</h4>
+          <p class="const-p">League dues are set at <strong>$200</strong>. Dues are collected through <a class="const-link" href="https://www.leaguesafe.com/league/3949641" target="_blank" rel="noopener">LeagueSafe</a> and collection will be sent out no later than August 1st. All managers must be fully paid up before the start of regular season. In the event that a manager fails to pay before the deadline, a 10% penalty will be added to their payment and will go towards the payouts at the end of the year.</p>
+
+          <h4 class="const-sub-title" id="const-7-2">7.2 Payout</h4>
+          <p class="const-p">League payout is structured as follows:</p>
+          <ul class="const-list">
+            <li>1st place: <strong>$1,600</strong></li>
+            <li>2nd place: <strong>$600</strong></li>
+            <li>3rd place: <strong>$200</strong></li>
+          </ul>
+          <p class="const-p">In the event that a manager was fined due to late payment, their extra fee will be added to the winner's payout. Similarly, if new managers come into the league and the payout is smaller, the difference will come out of the winner's prize.</p>
+
+          <h4 class="const-sub-title" id="const-7-3">7.3 Raising Dues</h4>
+          <p class="const-p">A ⅔ majority vote is required in order to raise league dues. In the event that a manager is no longer financially comfortable with the buy-in, finding a co-manager to split the cost is recommended.</p>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -2237,7 +2794,7 @@ const MANAGERS = [
     rookieOrVets: "Rookies",
     tradingScale: 10,
     foundingMember: true,
-    photo: null
+    photo: "/managers/kent.jpg"
   },
   {
     sleeperID: "723593197250486272",
@@ -2254,7 +2811,7 @@ const MANAGERS = [
     rookieOrVets: "Rookies",
     tradingScale: 8,
     foundingMember: true,
-    photo: null
+    photo: "/managers/jake.jpg"
   },
   {
     sleeperID: "1248128961037209600",
@@ -2291,7 +2848,7 @@ const MANAGERS = [
     rookieOrVets: "Vets",
     tradingScale: 3,
     foundingMember: true,
-    photo: null
+    photo: "/managers/nolan.jpg"
   },
   {
     sleeperID: "723604254102757376",
@@ -2308,7 +2865,7 @@ const MANAGERS = [
     rookieOrVets: "Rookies",
     tradingScale: 8,
     foundingMember: true,
-    photo: null
+    photo: "/managers/alex.jpg"
   },
   {
     sleeperID: "723612275360989184",
@@ -2325,7 +2882,7 @@ const MANAGERS = [
     rookieOrVets: "Rookies",
     tradingScale: 7,
     foundingMember: true,
-    photo: null
+    photo: "/managers/kyle.jpg"
   },
   {
     sleeperID: "723633175154225152",
@@ -2342,7 +2899,7 @@ const MANAGERS = [
     rookieOrVets: "Rookies",
     tradingScale: 3,
     foundingMember: true,
-    photo: null
+    photo: "/managers/ben.jpg"
   },
   {
     sleeperID: "723639098744586240",
@@ -2359,7 +2916,7 @@ const MANAGERS = [
     rookieOrVets: "Rookies",
     tradingScale: 5,
     foundingMember: true,
-    photo: null
+    photo: "/managers/ryan.jpg"
   },
   {
     sleeperID: "724002490193928192",
@@ -2376,7 +2933,7 @@ const MANAGERS = [
     rookieOrVets: "Rookies",
     tradingScale: 3,
     foundingMember: true,
-    photo: null
+    photo: "/managers/noah.jpg"
   },
   {
     sleeperID: "724010432502763520",
@@ -2413,7 +2970,7 @@ const MANAGERS = [
     rookieOrVets: "Vets",
     tradingScale: 5,
     foundingMember: true,
-    photo: null
+    photo: "/managers/evan.jpg"
   },
   {
     sleeperID: "861701837705809920",
@@ -2433,7 +2990,7 @@ const MANAGERS = [
     rookieOrVets: "Rookies",
     tradingScale: 9,
     foundingMember: false,
-    photo: null
+    photo: "/managers/gavin.jpg"
   },
   // Alumni / Former managers
   {
@@ -2447,7 +3004,7 @@ const MANAGERS = [
     roleNote: "Founding member — managed 2016–2024 (MFL 0007 → DCole08), franchise sold to Sirac in 2025",
     active: false,
     foundingMember: true,
-    photo: null
+    photo: "/managers/dylan.jpg"
   },
   {
     mflID: "0002",
@@ -7380,6 +7937,18 @@ function renderManagers() {
     return name && name !== realName ? name : null;
   }
 
+  // Trading scale label
+  function tradingLabel(scale) {
+    if (scale >= 9) return 'Shark';
+    if (scale >= 7) return 'Active';
+    if (scale >= 5) return 'Moderate';
+    if (scale >= 3) return 'Reserved';
+    return 'Inactive';
+  }
+
+  // Mode color class
+  const modeClass = { "Win Now": "mode-win-now", "Dynasty": "mode-dynasty", "Rebuild": "mode-rebuild" };
+
   grid.innerHTML = active.map(m => {
     const stats = getStats(m);
     const champs = champsForManager(m);
@@ -7391,34 +7960,69 @@ function renderManagers() {
       : '—';
     const teamNameDisplay = currentTeamName(m);
 
+    // Avatar: photo or initials
+    const avatarHtml = m.photo
+      ? `<div class="manager-avatar manager-avatar-photo"><img src="${m.photo}" alt="${m.name}" onerror="this.parentElement.innerHTML='${initials(m.name)}';this.parentElement.classList.remove('manager-avatar-photo');" /></div>`
+      : `<div class="manager-avatar">${initials(m.name)}</div>`;
+
     const tookOverNote = m.tookOver
       ? `<div class="manager-took-over">Took over ${m.tookOverFrom ? m.tookOverFrom + "'s" : 'a'} franchise in ${m.tookOver}</div>`
       : '';
 
     const philosophyText = m.philosophy
-      ? `<div class="manager-philosophy">${m.philosophy}</div>`
+      ? `<div class="manager-philosophy">"${m.philosophy}"</div>`
       : '';
 
     const tags = [];
-    if (m.foundingMember) tags.push('<span class="manager-tag founding">Founding Member</span>');
-    if (m.location) tags.push(`<span class="manager-tag">${m.location}</span>`);
-    if (m.mode) tags.push(`<span class="manager-tag">${m.mode}</span>`);
+    if (m.foundingMember) tags.push('<span class="manager-tag founding">⚑ Founding Member</span>');
+    if (m.location) tags.push(`<span class="manager-tag">📍 ${m.location}</span>`);
     if (m.favoriteTeam) tags.push(`<span class="manager-tag">🏈 ${m.favoriteTeam}</span>`);
+
+    // Mode badge
+    const modeBadge = m.mode
+      ? `<span class="manager-mode-badge ${modeClass[m.mode] || ''}">${m.mode}</span>`
+      : '';
+
+    // Position value + rookie/vet preference
+    const strategyBadges = [];
+    if (m.valuePosition) strategyBadges.push(`<span class="manager-strategy-badge">Values ${m.valuePosition}</span>`);
+    if (m.rookieOrVets) strategyBadges.push(`<span class="manager-strategy-badge">${m.rookieOrVets}</span>`);
+
+    // Trading scale bar (1–10)
+    const tradingScaleHtml = m.tradingScale != null ? (() => {
+      const filled = m.tradingScale;
+      const label = tradingLabel(m.tradingScale);
+      return `<div class="manager-trading-wrap">
+        <div class="manager-trading-label"><span>Trade Activity</span><span class="manager-trading-tag">${label} (${filled}/10)</span></div>
+        <div class="manager-trading-bar">
+          <div class="manager-trading-fill" style="width:${filled * 10}%"></div>
+        </div>
+      </div>`;
+    })() : '';
+
+    // Rival chip
+    const rivalHtml = m.rival
+      ? `<div class="manager-rival-wrap"><span class="manager-rival-label">⚔ Rival:</span> <span class="manager-rival-name">${m.rival}</span></div>`
+      : '';
 
     return `
       <div class="manager-card">
         <div class="manager-card-header">
-          <div class="manager-avatar">${initials(m.name)}</div>
+          ${avatarHtml}
           <div class="manager-card-names">
             <div class="manager-real-name">${m.name}${champs > 0 ? ' ' + Array(champs).fill('🏆').join('') : ''}</div>
             ${teamNameDisplay ? `<div class="manager-team-name">${teamNameDisplay}</div>` : ''}
             <div class="manager-username">@${m.username}</div>
           </div>
+          ${modeBadge}
         </div>
-        <span class="manager-role-badge ${roleClass_}">${m.role}</span>
+        <span class="manager-role-badge ${roleClass_}">${m.role}${m.roleNote ? ` <span class="role-note">${m.roleNote}</span>` : ''}</span>
         ${tookOverNote}
         ${tags.length ? `<div class="manager-tags">${tags.join('')}</div>` : ''}
+        ${strategyBadges.length ? `<div class="manager-strategy-badges">${strategyBadges.join('')}</div>` : ''}
         ${philosophyText}
+        ${rivalHtml}
+        ${tradingScaleHtml}
         <div class="manager-stats-row">
           <div class="manager-stat">
             <span class="manager-stat-val">${champs > 0 ? champs : '—'}</span>
@@ -7437,12 +8041,20 @@ function renderManagers() {
     `;
   }).join('');
 
-  alumniList.innerHTML = alumni.map(m => `
-    <div class="alumni-chip">
-      <span class="alumni-chip-name">${m.name}</span>
-      <span class="alumni-chip-note">${m.roleNote || ''}</span>
-    </div>
-  `).join('');
+  alumniList.innerHTML = alumni.map(m => {
+    const avatarHtml = m.photo
+      ? `<div class="alumni-chip-photo"><img src="${m.photo}" alt="${m.name}" /></div>`
+      : `<div class="alumni-chip-initials">${initials(m.name)}</div>`;
+    return `
+      <div class="alumni-chip">
+        ${avatarHtml}
+        <div class="alumni-chip-info">
+          <span class="alumni-chip-name">${m.name}</span>
+          <span class="alumni-chip-note">${m.roleNote || ''}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
 }
 
 // Add to init
@@ -8347,6 +8959,151 @@ function renderLedger() {
   renderLedgerTabs();
   renderContent(activeLedgerTab);
 }
+
+// ── Rivalry Tool ──────────────────────────────────────────────────────────────
+function initRivalry() {
+  const sel1 = document.getElementById('rivalry-manager1');
+  const sel2 = document.getElementById('rivalry-manager2');
+  const resultEl = document.getElementById('rivalry-result');
+  if (!sel1 || !sel2 || !resultEl) return;
+
+  // Collect all manager names that appear in any season matchup
+  const allManagers = new Set();
+  LEAGUE_DATA.seasons.forEach(s => {
+    (s.matchups || []).forEach(m => {
+      if (m.home) allManagers.add(canonical(m.home));
+      if (m.away) allManagers.add(canonical(m.away));
+    });
+    (s.standings || []).forEach(st => {
+      if (st.manager) allManagers.add(canonical(st.manager));
+    });
+  });
+  const managerList = Array.from(allManagers).sort();
+
+  function populateSelect(sel, defaultName) {
+    sel.innerHTML = managerList.map((n, i) =>
+      `<option value="${n}" ${n === defaultName ? 'selected' : ''}>${n}</option>`
+    ).join('');
+  }
+  populateSelect(sel1, managerList[0] || '');
+  populateSelect(sel2, managerList[1] || '');
+
+  // Manager photo lookup by canonical name
+  function getManagerPhoto(name) {
+    const m = MANAGERS.find(mg => (mg.name === name || canonical(mg.name) === name));
+    return m && m.photo ? m.photo : null;
+  }
+
+  function avatarHtml(name, size = 64) {
+    const photo = getManagerPhoto(name);
+    const ini = name.slice(0,2).toUpperCase();
+    if (photo) {
+      return `<div class="rivalry-side-photo" style="width:${size}px;height:${size}px;">
+        <img src="${photo}" alt="${name}" onerror="this.parentElement.innerHTML='<div style=\\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--font-display);font-size:1em;\\'>${ini}</div>';" />
+      </div>`;
+    }
+    return `<div class="rivalry-side-initials" style="width:${size}px;height:${size}px;">${ini}</div>`;
+  }
+
+  function computeRivalry(m1, m2) {
+    let w1 = 0, w2 = 0;
+    let pf1 = 0, pf2 = 0;
+    const games = [];
+
+    LEAGUE_DATA.seasons.forEach(s => {
+      (s.matchups || []).forEach(match => {
+        const home = canonical(match.home);
+        const away = canonical(match.away);
+        const isMatch = (home === m1 && away === m2) || (home === m2 && away === m1);
+        if (!isMatch) return;
+
+        const homeScore = parseFloat(match.homeScore || match.home_score || 0);
+        const awayScore = parseFloat(match.awayScore || match.away_score || 0);
+
+        // Determine who is m1 and who is m2 in this matchup
+        const score1 = home === m1 ? homeScore : awayScore;
+        const score2 = home === m2 ? homeScore : awayScore;
+
+        if (score1 > score2) w1++;
+        else if (score2 > score1) w2++;
+
+        pf1 += score1;
+        pf2 += score2;
+
+        const week = match.week ? `Wk ${match.week}` : (match.playoff ? 'Playoffs' : '');
+        games.push({ year: s.year, week, score1, score2, winner: score1 >= score2 ? m1 : m2 });
+      });
+    });
+
+    return { w1, w2, pf1, pf2, games };
+  }
+
+  function renderRivalry() {
+    const m1 = sel1.value;
+    const m2 = sel2.value;
+    if (!m1 || !m2 || m1 === m2) {
+      resultEl.innerHTML = '<p class="rivalry-placeholder">Select two different managers to compare.</p>';
+      return;
+    }
+
+    const { w1, w2, pf1, pf2, games } = computeRivalry(m1, m2);
+    const total = w1 + w2;
+
+    if (total === 0) {
+      resultEl.innerHTML = `<p class="rivalry-placeholder">No head-to-head matchups found between ${m1} and ${m2}.</p>`;
+      return;
+    }
+
+    const winner = w1 > w2 ? m1 : w2 > w1 ? m2 : null;
+
+    const gamesHtml = [...games].sort((a,b) => b.year - a.year || 0).map(g => {
+      const s1win = g.winner === m1;
+      return `<div class="rivalry-history-row">
+        <span class="rh-year">${g.year}</span>
+        <span class="rh-name ${s1win ? 'winner' : 'loser'}">${m1}</span>
+        <span class="rh-score ${s1win ? 'win' : 'loss'}">${g.score1 > 0 ? g.score1.toFixed(2) : '—'} – ${g.score2 > 0 ? g.score2.toFixed(2) : '—'}</span>
+        <span class="rh-name ${!s1win ? 'winner' : 'loser'}">${m2}</span>
+        <span class="rh-week">${g.week}</span>
+      </div>`;
+    }).join('');
+
+    resultEl.innerHTML = `
+      <div class="rivalry-result-inner">
+        <div class="rivalry-side ${winner === m1 ? 'winner' : ''}">
+          ${avatarHtml(m1)}
+          ${winner === m1 ? '<div class="rivalry-side-crown">👑</div>' : ''}
+          <div class="rivalry-side-name">${m1}</div>
+          <div class="rivalry-side-record">${w1}–${w2}</div>
+          <div class="rivalry-side-pf">${pf1.toFixed(1)} pts scored</div>
+        </div>
+        <div class="rivalry-center-col">
+          <div class="rivalry-center-vs">vs</div>
+          <div class="rivalry-center-stat">${total} games</div>
+        </div>
+        <div class="rivalry-side ${winner === m2 ? 'winner' : ''}">
+          ${avatarHtml(m2)}
+          ${winner === m2 ? '<div class="rivalry-side-crown">👑</div>' : ''}
+          <div class="rivalry-side-name">${m2}</div>
+          <div class="rivalry-side-record">${w2}–${w1}</div>
+          <div class="rivalry-side-pf">${pf2.toFixed(1)} pts scored</div>
+        </div>
+      </div>
+      ${games.length > 0 ? `
+        <div class="rivalry-history">
+          <div class="rivalry-history-title">All Matchups</div>
+          ${gamesHtml}
+        </div>` : ''}
+    `;
+  }
+
+  sel1.addEventListener('change', renderRivalry);
+  sel2.addEventListener('change', renderRivalry);
+  renderRivalry();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initRivalry();
+});
 
 </script>
 </body>

@@ -1,5 +1,5 @@
 // South of the River Dynasty — Auto-generated Data File
-// Generated: 2026-04-15T18:45:36.479Z
+// Generated: 2026-04-15T19:43:20.354Z
 // Sources: MFL league 75698 (2016-2020, archived) + Sleeper league 1199905589971390464 (2021-present)
 // Cached seasons: MFL 2016-2020, Sleeper 2021-2025  (all archived — off-season)
 // Live-fetched:   none — run again once the 2026 season starts on Sleeper
@@ -14,6 +14,29 @@ const LEAGUE_DATA = {
   "founded": 2015,
   "note": "Started on NFL.com in 2015, moved to MFL in 2016, moved to Sleeper in 2022",
   "seasons": [
+    {
+      "year": 2015,
+      "platform": "manual",
+      "champion": "Kevin",
+      "runnerUp": "Ben",
+      "thirdPlace": "Ryan",
+      "note": "Inaugural season on NFL.com — Kevin won the first ever championship",
+      "championTeam": "Kevin",
+      "standings": [
+        { "manager": "Kyle",  "team": "Kyle",  "w": 10, "l": 3, "pf": 1572.80, "pa": 1422.08 },
+        { "manager": "Ryan",  "team": "Ryan",  "w": 9,  "l": 4, "pf": 1797.76, "pa": 1424.16 },
+        { "manager": "Evan",  "team": "Evan",  "w": 8,  "l": 5, "pf": 1729.74, "pa": 1449.98 },
+        { "manager": "Ben",   "team": "Ben",   "w": 7,  "l": 6, "pf": 1402.96, "pa": 1383.06 },
+        { "manager": "Kris",  "team": "Kris",  "w": 7,  "l": 6, "pf": 1558.94, "pa": 1602.82 },
+        { "manager": "Alex",  "team": "Alex",  "w": 6,  "l": 7, "pf": 1510.02, "pa": 1616.68 },
+        { "manager": "Jake",  "team": "Jake",  "w": 6,  "l": 7, "pf": 1406.02, "pa": 1456.40 },
+        { "manager": "Kent",  "team": "Kent",  "w": 6,  "l": 7, "pf": 1539.74, "pa": 1646.98 },
+        { "manager": "Kevin", "team": "Kevin", "w": 6,  "l": 7, "pf": 1601.86, "pa": 1557.00 },
+        { "manager": "Nolan", "team": "Nolan", "w": 5,  "l": 8, "pf": 1274.48, "pa": 1369.30 },
+        { "manager": "Noah",  "team": "Noah",  "w": 4,  "l": 9, "pf": 1283.08, "pa": 1464.56 },
+        { "manager": "Dylan", "team": "Dylan", "w": 4,  "l": 9, "pf": 1405.64, "pa": 1690.02 }
+      ]
+    },
     {
       "year": 2016,
       "platform": "MFL",
@@ -2150,13 +2173,14 @@ const DRAFT_DATA = {
   "managerStats": [
     {
       "manager": "Noah",
-      "totalPicks": 70,
-      "round1Picks": 11,
-      "round2Picks": 9,
+      "totalPicks": 77,
+      "round1Picks": 12,
+      "round2Picks": 10,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020,
         2021,
@@ -2168,13 +2192,14 @@ const DRAFT_DATA = {
     },
     {
       "manager": "Kent",
-      "totalPicks": 67,
+      "totalPicks": 72,
       "round1Picks": 8,
       "round2Picks": 6,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020,
         2021,
@@ -2186,13 +2211,14 @@ const DRAFT_DATA = {
     },
     {
       "manager": "Jake",
-      "totalPicks": 70,
-      "round1Picks": 9,
-      "round2Picks": 9,
+      "totalPicks": 77,
+      "round1Picks": 10,
+      "round2Picks": 10,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020,
         2021,
@@ -2204,13 +2230,14 @@ const DRAFT_DATA = {
     },
     {
       "manager": "Nolan",
-      "totalPicks": 64,
-      "round1Picks": 8,
-      "round2Picks": 6,
+      "totalPicks": 71,
+      "round1Picks": 9,
+      "round2Picks": 7,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020,
         2021,
@@ -2222,13 +2249,14 @@ const DRAFT_DATA = {
     },
     {
       "manager": "Alex",
-      "totalPicks": 71,
-      "round1Picks": 6,
-      "round2Picks": 13,
+      "totalPicks": 79,
+      "round1Picks": 8,
+      "round2Picks": 14,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020,
         2021,
@@ -2240,13 +2268,14 @@ const DRAFT_DATA = {
     },
     {
       "manager": "Dylan",
-      "totalPicks": 68,
-      "round1Picks": 11,
-      "round2Picks": 7,
+      "totalPicks": 75,
+      "round1Picks": 12,
+      "round2Picks": 8,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020,
         2021,
@@ -2257,13 +2286,14 @@ const DRAFT_DATA = {
     },
     {
       "manager": "Evan",
-      "totalPicks": 72,
-      "round1Picks": 9,
-      "round2Picks": 13,
+      "totalPicks": 80,
+      "round1Picks": 10,
+      "round2Picks": 15,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020,
         2021,
@@ -2275,13 +2305,14 @@ const DRAFT_DATA = {
     },
     {
       "manager": "Kris",
-      "totalPicks": 61,
-      "round1Picks": 5,
+      "totalPicks": 67,
+      "round1Picks": 6,
       "round2Picks": 8,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020,
         2021,
@@ -2290,13 +2321,14 @@ const DRAFT_DATA = {
     },
     {
       "manager": "Kyle",
-      "totalPicks": 66,
+      "totalPicks": 72,
       "round1Picks": 9,
-      "round2Picks": 8,
+      "round2Picks": 9,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020,
         2021,
@@ -2308,13 +2340,14 @@ const DRAFT_DATA = {
     },
     {
       "manager": "Ryan",
-      "totalPicks": 69,
-      "round1Picks": 9,
-      "round2Picks": 9,
+      "totalPicks": 76,
+      "round1Picks": 10,
+      "round2Picks": 10,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020,
         2021,
@@ -2326,13 +2359,14 @@ const DRAFT_DATA = {
     },
     {
       "manager": "Ben",
-      "totalPicks": 70,
-      "round1Picks": 9,
-      "round2Picks": 7,
+      "totalPicks": 76,
+      "round1Picks": 10,
+      "round2Picks": 8,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020,
         2021,
@@ -2344,13 +2378,14 @@ const DRAFT_DATA = {
     },
     {
       "manager": "Kevin",
-      "totalPicks": 31,
-      "round1Picks": 7,
-      "round2Picks": 4,
+      "totalPicks": 41,
+      "round1Picks": 9,
+      "round2Picks": 6,
       "tradedPicksAcquired": 0,
       "seasons": [
         2016,
         2017,
+        2018,
         2019,
         2020
       ]
@@ -3488,7 +3523,512 @@ const DRAFT_DATA = {
       "draftId": null,
       "type": "linear",
       "rounds": null,
-      "picks": [],
+      "picks": [
+        {
+          "round": 1,
+          "pick": 1,
+          "player": "Barkley, Saquon (RB)",
+          "manager": "Alex"
+        },
+        {
+          "round": 1,
+          "pick": 2,
+          "player": "Michel, Sony (RB)",
+          "manager": "Kevin"
+        },
+        {
+          "round": 1,
+          "pick": 3,
+          "player": "Chubb, Nick (RB)",
+          "manager": "Nolan"
+        },
+        {
+          "round": 1,
+          "pick": 4,
+          "player": "Moore, D.J. (WR)",
+          "manager": "Jake"
+        },
+        {
+          "round": 1,
+          "pick": 5,
+          "player": "Freeman, Royce (RB)",
+          "manager": "Kris"
+        },
+        {
+          "round": 1,
+          "pick": 6,
+          "player": "Penny, Rashaad (RB)",
+          "manager": "Ryan"
+        },
+        {
+          "round": 1,
+          "pick": 7,
+          "player": "Johnson, Kerryon (RB)",
+          "manager": "Kevin"
+        },
+        {
+          "round": 1,
+          "pick": 8,
+          "player": "Burton, Trey (TE)",
+          "manager": "Alex"
+        },
+        {
+          "round": 1,
+          "pick": 9,
+          "player": "Guice, Derrius (RB)",
+          "manager": "Dylan"
+        },
+        {
+          "round": 1,
+          "pick": 10,
+          "player": "Alexander, Kwon (LB)",
+          "manager": "Noah"
+        },
+        {
+          "round": 1,
+          "pick": 11,
+          "player": "Jones, Ronald (RB)",
+          "manager": "Evan"
+        },
+        {
+          "round": 1,
+          "pick": 12,
+          "player": "Mack, Marlon (RB)",
+          "manager": "Ben"
+        },
+        {
+          "round": 2,
+          "pick": 1,
+          "player": "Carson, Chris (RB)",
+          "manager": "Kyle"
+        },
+        {
+          "round": 2,
+          "pick": 2,
+          "player": "Crowder, Jamison (WR)",
+          "manager": "Kevin"
+        },
+        {
+          "round": 2,
+          "pick": 3,
+          "player": "Powell, Bilal (RB)",
+          "manager": "Nolan"
+        },
+        {
+          "round": 2,
+          "pick": 4,
+          "player": "Ridley, Calvin (WR)",
+          "manager": "Jake"
+        },
+        {
+          "round": 2,
+          "pick": 5,
+          "player": "Howard, O.J. (TE)",
+          "manager": "Evan"
+        },
+        {
+          "round": 2,
+          "pick": 6,
+          "player": "Roethlisberger, Ben (QB)",
+          "manager": "Ryan"
+        },
+        {
+          "round": 2,
+          "pick": 7,
+          "player": "Agholor, Nelson (WR)",
+          "manager": "Kevin"
+        },
+        {
+          "round": 2,
+          "pick": 8,
+          "player": "Hines, Nyheim (RB)",
+          "manager": "Alex"
+        },
+        {
+          "round": 2,
+          "pick": 9,
+          "player": "Benjamin, Kelvin (WR)",
+          "manager": "Dylan"
+        },
+        {
+          "round": 2,
+          "pick": 10,
+          "player": "Anderson, C.J. (RB)",
+          "manager": "Noah"
+        },
+        {
+          "round": 2,
+          "pick": 11,
+          "player": "Miller, Anthony (WR)",
+          "manager": "Evan"
+        },
+        {
+          "round": 2,
+          "pick": 12,
+          "player": "Cook, Jared (TE)",
+          "manager": "Ben"
+        },
+        {
+          "round": 3,
+          "pick": 1,
+          "player": "Clement, Corey (RB)",
+          "manager": "Kyle"
+        },
+        {
+          "round": 3,
+          "pick": 2,
+          "player": "Bernard, Giovani (RB)",
+          "manager": "Kevin"
+        },
+        {
+          "round": 3,
+          "pick": 3,
+          "player": "Rivers, Philip (QB)",
+          "manager": "Nolan"
+        },
+        {
+          "round": 3,
+          "pick": 4,
+          "player": "Wilkins, Jordan (RB)",
+          "manager": "Jake"
+        },
+        {
+          "round": 3,
+          "pick": 5,
+          "player": "Brate, Cameron (TE)",
+          "manager": "Kris"
+        },
+        {
+          "round": 3,
+          "pick": 6,
+          "player": "Shepard, Sterling (WR)",
+          "manager": "Ryan"
+        },
+        {
+          "round": 3,
+          "pick": 7,
+          "player": "Baker, Budda (S)",
+          "manager": "Kevin"
+        },
+        {
+          "round": 3,
+          "pick": 8,
+          "player": "Booker, Devontae (RB)",
+          "manager": "Alex"
+        },
+        {
+          "round": 3,
+          "pick": 9,
+          "player": "Kittle, George (TE)",
+          "manager": "Dylan"
+        },
+        {
+          "round": 3,
+          "pick": 10,
+          "player": "Coleman, Kurt (S)",
+          "manager": "Noah"
+        },
+        {
+          "round": 3,
+          "pick": 11,
+          "player": "Sanu, Mohamed (WR)",
+          "manager": "Evan"
+        },
+        {
+          "round": 3,
+          "pick": 12,
+          "player": "Eifert, Tyler (TE)",
+          "manager": "Kent"
+        },
+        {
+          "round": 4,
+          "pick": 1,
+          "player": "Mayfield, Baker (QB)",
+          "manager": "Kyle"
+        },
+        {
+          "round": 4,
+          "pick": 2,
+          "player": "McDonald, Vance (TE)",
+          "manager": "Kevin"
+        },
+        {
+          "round": 4,
+          "pick": 3,
+          "player": "Williams, Tyrell (WR)",
+          "manager": "Nolan"
+        },
+        {
+          "round": 4,
+          "pick": 4,
+          "player": "Jackson, Lamar (QB)",
+          "manager": "Jake"
+        },
+        {
+          "round": 4,
+          "pick": 5,
+          "player": "White, Kevin (WR)",
+          "manager": "Kris"
+        },
+        {
+          "round": 4,
+          "pick": 6,
+          "player": "Williams, Mike (WR)",
+          "manager": "Ryan"
+        },
+        {
+          "round": 4,
+          "pick": 7,
+          "player": "Stills, Kenny (WR)",
+          "manager": "Kent"
+        },
+        {
+          "round": 4,
+          "pick": 8,
+          "player": "Foreman, D'Onta (RB)",
+          "manager": "Alex"
+        },
+        {
+          "round": 4,
+          "pick": 9,
+          "player": "Gallup, Michael (WR)",
+          "manager": "Dylan"
+        },
+        {
+          "round": 4,
+          "pick": 10,
+          "player": "Donald, Aaron (DE)",
+          "manager": "Noah"
+        },
+        {
+          "round": 4,
+          "pick": 11,
+          "player": "Godwin, Chris (WR)",
+          "manager": "Evan"
+        },
+        {
+          "round": 4,
+          "pick": 12,
+          "player": "Lee, Marqise (WR)",
+          "manager": "Ben"
+        },
+        {
+          "round": 5,
+          "pick": 1,
+          "player": "Montgomery, Ty (RB)",
+          "manager": "Kyle"
+        },
+        {
+          "round": 5,
+          "pick": 2,
+          "player": "Seferian-Jenkins, Austin (TE)",
+          "manager": "Kevin"
+        },
+        {
+          "round": 5,
+          "pick": 3,
+          "player": "Kirk, Christian (WR)",
+          "manager": "Nolan"
+        },
+        {
+          "round": 5,
+          "pick": 4,
+          "player": "Watt, J.J. (DE)",
+          "manager": "Jake"
+        },
+        {
+          "round": 5,
+          "pick": 5,
+          "player": "Ross, John (WR)",
+          "manager": "Kris"
+        },
+        {
+          "round": 5,
+          "pick": 6,
+          "player": "Blount, LeGarrette (RB)",
+          "manager": "Ryan"
+        },
+        {
+          "round": 5,
+          "pick": 7,
+          "player": "Mariota, Marcus (QB)",
+          "manager": "Kent"
+        },
+        {
+          "round": 5,
+          "pick": 8,
+          "player": "Sutton, Courtland (WR)",
+          "manager": "Alex"
+        },
+        {
+          "round": 5,
+          "pick": 9,
+          "player": "Smith, Alex (QB)",
+          "manager": "Dylan"
+        },
+        {
+          "round": 5,
+          "pick": 10,
+          "player": "Jackson, DeSean (WR)",
+          "manager": "Noah"
+        },
+        {
+          "round": 5,
+          "pick": 11,
+          "player": "Breida, Matt (RB)",
+          "manager": "Evan"
+        },
+        {
+          "round": 5,
+          "pick": 12,
+          "player": "Allen, Javorius (RB)",
+          "manager": "Ben"
+        },
+        {
+          "round": 6,
+          "pick": 1,
+          "player": "Gore, Frank (RB)",
+          "manager": "Kyle"
+        },
+        {
+          "round": 6,
+          "pick": 2,
+          "player": "Kelley, Rob (RB)",
+          "manager": "Kevin"
+        },
+        {
+          "round": 6,
+          "pick": 3,
+          "player": "Yeldon, T.J. (RB)",
+          "manager": "Nolan"
+        },
+        {
+          "round": 6,
+          "pick": 4,
+          "player": "Washington, James (WR)",
+          "manager": "Jake"
+        },
+        {
+          "round": 6,
+          "pick": 5,
+          "player": "Riddick, Theo (RB)",
+          "manager": "Kris"
+        },
+        {
+          "round": 6,
+          "pick": 6,
+          "player": "Richardson, Paul (WR)",
+          "manager": "Ryan"
+        },
+        {
+          "round": 6,
+          "pick": 7,
+          "player": "Bortles, Blake (QB)",
+          "manager": "Kent"
+        },
+        {
+          "round": 6,
+          "pick": 8,
+          "player": "Darnold, Sam (QB)",
+          "manager": "Alex"
+        },
+        {
+          "round": 6,
+          "pick": 9,
+          "player": "Hurns, Allen (WR)",
+          "manager": "Dylan"
+        },
+        {
+          "round": 6,
+          "pick": 10,
+          "player": "Gesicki, Mike (TE)",
+          "manager": "Noah"
+        },
+        {
+          "round": 6,
+          "pick": 11,
+          "player": "Ivory, Chris (RB)",
+          "manager": "Evan"
+        },
+        {
+          "round": 6,
+          "pick": 12,
+          "player": "Golladay, Kenny (WR)",
+          "manager": "Ben"
+        },
+        {
+          "round": 7,
+          "pick": 1,
+          "player": "Turbin, Robert (RB)",
+          "manager": "Kyle"
+        },
+        {
+          "round": 7,
+          "pick": 2,
+          "player": "Lee, Sean (LB)",
+          "manager": "Kevin"
+        },
+        {
+          "round": 7,
+          "pick": 3,
+          "player": "Rosen, Josh (QB)",
+          "manager": "Nolan"
+        },
+        {
+          "round": 7,
+          "pick": 4,
+          "player": "Taylor, Tyrod (QB)",
+          "manager": "Jake"
+        },
+        {
+          "round": 7,
+          "pick": 5,
+          "player": "Lockett, Tyler (WR)",
+          "manager": "Kris"
+        },
+        {
+          "round": 7,
+          "pick": 6,
+          "player": "Allen, Josh (QB)",
+          "manager": "Ryan"
+        },
+        {
+          "round": 7,
+          "pick": 7,
+          "player": "Mosley, C.J. (LB)",
+          "manager": "Kent"
+        },
+        {
+          "round": 7,
+          "pick": 8,
+          "player": "Player #0000",
+          "manager": "Alex"
+        },
+        {
+          "round": 7,
+          "pick": 9,
+          "player": "Hooper, Austin (TE)",
+          "manager": "Dylan"
+        },
+        {
+          "round": 7,
+          "pick": 10,
+          "player": "Jones, Deion (LB)",
+          "manager": "Noah"
+        },
+        {
+          "round": 7,
+          "pick": 11,
+          "player": "Player #0000",
+          "manager": "Evan"
+        },
+        {
+          "round": 7,
+          "pick": 12,
+          "player": "Meredith, Cameron (WR)",
+          "manager": "Ben"
+        }
+      ],
       "tradedPicks": [
         {
           "season": 2019,
@@ -4549,74 +5089,7 @@ const DRAFT_DATA = {
           "manager": "Jake"
         }
       ],
-      "tradedPicks": [
-        {
-          "season": 2021,
-          "round": 3,
-          "currentOwner": "Kent",
-          "originalOwner": "Dylan"
-        },
-        {
-          "season": 2021,
-          "round": 1,
-          "currentOwner": "Kent",
-          "originalOwner": "Kyle"
-        },
-        {
-          "season": 2021,
-          "round": 2,
-          "currentOwner": "Kris",
-          "originalOwner": "Noah"
-        },
-        {
-          "season": 2021,
-          "round": 1,
-          "currentOwner": "Alex",
-          "originalOwner": "Kent"
-        },
-        {
-          "season": 2021,
-          "round": 3,
-          "currentOwner": "Alex",
-          "originalOwner": "Ryan"
-        },
-        {
-          "season": 2021,
-          "round": 2,
-          "currentOwner": "Ben",
-          "originalOwner": "Evan"
-        },
-        {
-          "season": 2021,
-          "round": 2,
-          "currentOwner": "Ben",
-          "originalOwner": "Kris"
-        },
-        {
-          "season": 2021,
-          "round": 1,
-          "currentOwner": "Dylan",
-          "originalOwner": "Alex"
-        },
-        {
-          "season": 2021,
-          "round": 4,
-          "currentOwner": "Ryan",
-          "originalOwner": "Alex"
-        },
-        {
-          "season": 2021,
-          "round": 1,
-          "currentOwner": "Kyle",
-          "originalOwner": "Noah"
-        },
-        {
-          "season": 2022,
-          "round": 2,
-          "currentOwner": "Kyle",
-          "originalOwner": "Noah"
-        }
-      ]
+      "tradedPicks": []
     },
     {
       "year": 2021,
@@ -9729,8 +10202,8 @@ const FETCH_SUMMARY = {
   ],
   "allTrades": 115,
   "allWaiverTx": 3190,
-  "totalDraftPicks": 828,
-  "totalTradedPicks": 214
+  "totalDraftPicks": 912,
+  "totalTradedPicks": 203
 };
 
 window.LEAGUE_DATA    = LEAGUE_DATA;
