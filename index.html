@@ -3254,6 +3254,7 @@ const DEEP_ANALYSIS = {
 window.DEEP_ANALYSIS = DEEP_ANALYSIS;
 
 // ── Trade Data (auto-generated from season caches) ────────────────────────
+// Each trade: { year, week, platform, sides: [{manager, items:[{type,desc,future?,drafted?,playerName?,retraded?,retradedTo?}]}] }
 const TRADE_DATA = [
   {
     "year": 2015,
@@ -4333,8 +4334,8 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R1 (Kyle's pick)",
             "future": false,
-            "drafted": true,
-            "playerName": "Justin Herbert (QB)",
+            "drafted": false,
+            "playerName": null,
             "retradedTo": null,
             "retraded": false
           }
@@ -4444,10 +4445,10 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R2",
             "future": false,
-            "drafted": true,
-            "playerName": "Saquon Barkley (RB)",
-            "retradedTo": "Alex",
-            "retraded": true
+            "drafted": false,
+            "playerName": null,
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       }
@@ -4469,8 +4470,8 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R2",
             "future": false,
-            "drafted": true,
-            "playerName": "Derrick Henry (RB)",
+            "drafted": false,
+            "playerName": null,
             "retradedTo": null,
             "retraded": false
           }
@@ -4541,10 +4542,10 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R2",
             "future": false,
-            "drafted": true,
-            "playerName": "Dalvin Cook (RB)",
-            "retradedTo": "Kyle",
-            "retraded": true
+            "drafted": false,
+            "playerName": null,
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       }
@@ -4562,10 +4563,10 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R1 (Kent's pick)",
             "future": false,
-            "drafted": true,
-            "playerName": "Deshaun Watson (QB)",
-            "retradedTo": "Dylan",
-            "retraded": true
+            "drafted": false,
+            "playerName": null,
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       },
@@ -4580,10 +4581,10 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R2 (Noah's pick)",
             "future": false,
-            "drafted": true,
-            "playerName": "Dalvin Cook (RB)",
-            "retradedTo": "Kyle",
-            "retraded": true
+            "drafted": false,
+            "playerName": null,
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       }
@@ -4630,8 +4631,8 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R4",
             "future": false,
-            "drafted": true,
-            "playerName": "Austin Ekeler (RB)",
+            "drafted": false,
+            "playerName": null,
             "retradedTo": null,
             "retraded": false
           }
@@ -4644,8 +4645,8 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R3",
             "future": false,
-            "drafted": true,
-            "playerName": "DeAndre Hopkins (WR)",
+            "drafted": false,
+            "playerName": null,
             "retradedTo": null,
             "retraded": false
           }
@@ -4682,8 +4683,8 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R1",
             "future": false,
-            "drafted": true,
-            "playerName": "Jared Goff (QB)",
+            "drafted": false,
+            "playerName": null,
             "retradedTo": null,
             "retraded": false
           }
@@ -4703,8 +4704,8 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R1 (Kyle's pick)",
             "future": false,
-            "drafted": true,
-            "playerName": "Justin Herbert (QB)",
+            "drafted": false,
+            "playerName": null,
             "retradedTo": null,
             "retraded": false
           }
@@ -4721,8 +4722,8 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R3",
             "future": false,
-            "drafted": true,
-            "playerName": "Myles Gaskin (RB)",
+            "drafted": false,
+            "playerName": null,
             "retradedTo": null,
             "retraded": false
           }
@@ -4755,8 +4756,8 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R1 (Noah's pick)",
             "future": false,
-            "drafted": true,
-            "playerName": "Patrick Mahomes (QB)",
+            "drafted": false,
+            "playerName": null,
             "retradedTo": null,
             "retraded": false
           }
@@ -4776,8 +4777,8 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2021 R1",
             "future": false,
-            "drafted": true,
-            "playerName": "Jalen Hurts (QB)",
+            "drafted": false,
+            "playerName": null,
             "retradedTo": null,
             "retraded": false
           },
@@ -4785,10 +4786,10 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2022 R2",
             "future": false,
-            "drafted": true,
-            "playerName": "Christian Watson (WR)",
-            "retradedTo": "Alex",
-            "retraded": true
+            "drafted": false,
+            "playerName": null,
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       },
@@ -4816,8 +4817,8 @@ const TRADE_DATA = [
             "desc": "2023 R2 (Noah's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Will Anderson (LB)",
-            "retradedTo": "Kyle",
+            "playerName": "Tank Dell (WR)",
+            "retradedTo": "Ryan",
             "retraded": true
           }
         ]
@@ -4850,9 +4851,9 @@ const TRADE_DATA = [
             "desc": "2022 R2 (Noah's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Christian Watson (WR)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Isiah Pacheco (RB)",
+            "retradedTo": "Kyle",
+            "retraded": true
           }
         ]
       },
@@ -4884,8 +4885,8 @@ const TRADE_DATA = [
             "desc": "2022 R2 (Nolan's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Christian Watson (WR)",
-            "retradedTo": "Alex",
+            "playerName": "Derek Carr (QB)",
+            "retradedTo": "Dylan",
             "retraded": true
           }
         ]
@@ -4922,9 +4923,9 @@ const TRADE_DATA = [
             "desc": "2022 R2 (Kyle's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Jahan Dotson (WR)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Allen Lazard (WR)",
+            "retradedTo": "Alex",
+            "retraded": true
           }
         ]
       },
@@ -4949,8 +4950,8 @@ const TRADE_DATA = [
             "desc": "2023 R1 (Kent's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Zach Charbonnet (RB)",
-            "retradedTo": "Dylan",
+            "playerName": "Jahmyr Gibbs (RB)",
+            "retradedTo": "Kent",
             "retraded": true
           }
         ]
@@ -5008,9 +5009,9 @@ const TRADE_DATA = [
             "desc": "2022 R1 (Alex's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Dameon Pierce (RB)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Jameson Williams (WR)",
+            "retradedTo": "Noah",
+            "retraded": true
           }
         ]
       },
@@ -5047,9 +5048,9 @@ const TRADE_DATA = [
             "desc": "2022 R2 (Kent's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Jahan Dotson (WR)",
-            "retradedTo": "Kyle",
-            "retraded": true
+            "playerName": "Allen Lazard (WR)",
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       }
@@ -5076,9 +5077,9 @@ const TRADE_DATA = [
             "desc": "2022 R1 (Dylan's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Dameon Pierce (RB)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Jameson Williams (WR)",
+            "retradedTo": "Noah",
+            "retraded": true
           }
         ]
       },
@@ -5107,9 +5108,9 @@ const TRADE_DATA = [
             "desc": "2022 R2 (Kent's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Jahan Dotson (WR)",
-            "retradedTo": "Kyle",
-            "retraded": true
+            "playerName": "Derek Carr (QB)",
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       }
@@ -5141,9 +5142,9 @@ const TRADE_DATA = [
             "desc": "2022 R3 (Alex's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Kenny Pickett (QB)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Jalen Tolbert (WR)",
+            "retradedTo": "Noah",
+            "retraded": true
           }
         ]
       }
@@ -5166,7 +5167,7 @@ const TRADE_DATA = [
             "desc": "2022 R1 (Evan's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Jameson Williams (WR)",
+            "playerName": "Garrett Wilson (WR)",
             "retradedTo": null,
             "retraded": false
           },
@@ -5175,7 +5176,7 @@ const TRADE_DATA = [
             "desc": "2022 R3 (Evan's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Jalen Tolbert (WR)",
+            "playerName": "Minkah Fitzpatrick (DB)",
             "retradedTo": null,
             "retraded": false
           },
@@ -5184,9 +5185,9 @@ const TRADE_DATA = [
             "desc": "2023 R1 (Evan's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Quentin Johnston (WR)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Tyjae Spears (RB)",
+            "retradedTo": "Dylan",
+            "retraded": true
           },
           {
             "type": "pick",
@@ -5232,9 +5233,9 @@ const TRADE_DATA = [
             "desc": "2022 R1 (Kent's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Dameon Pierce (RB)",
-            "retradedTo": "Dylan",
-            "retraded": true
+            "playerName": "Jameson Williams (WR)",
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       }
@@ -5266,9 +5267,9 @@ const TRADE_DATA = [
             "desc": "2024 R2 (Kyle's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Ben Sinnott (TE)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Jermaine Burton (WR)",
+            "retradedTo": "Jake",
+            "retraded": true
           }
         ]
       },
@@ -5297,24 +5298,24 @@ const TRADE_DATA = [
             "future": false,
             "drafted": true,
             "playerName": "Will Anderson (LB)",
-            "retradedTo": "Kyle",
-            "retraded": true
+            "retradedTo": null,
+            "retraded": false
           },
           {
             "type": "pick",
             "desc": "2024 R1 (Noah's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Brock Bowers (TE)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Trey Benson (RB)",
+            "retradedTo": "Noah",
+            "retraded": true
           },
           {
             "type": "pick",
             "desc": "2024 R2 (Noah's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Ricky Pearsall (WR)",
+            "playerName": "Ja'Lynn Polk (WR)",
             "retradedTo": null,
             "retraded": false
           },
@@ -5332,9 +5333,9 @@ const TRADE_DATA = [
             "desc": "2025 R2 (Noah's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Tyler Warren (TE)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Mason Taylor (TE)",
+            "retradedTo": "Noah",
+            "retraded": true
           }
         ]
       },
@@ -5370,18 +5371,18 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2023 R1 (Nolan's pick)",
             "future": false,
-            "drafted": false,
-            "playerName": null,
-            "retradedTo": null,
-            "retraded": false
+            "drafted": true,
+            "playerName": "Quentin Johnston (WR)",
+            "retradedTo": "Evan",
+            "retraded": true
           },
           {
             "type": "pick",
             "desc": "2024 R2 (Nolan's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Ja'Tavion Sanders (TE)",
-            "retradedTo": "Ben",
+            "playerName": "Caleb Williams (QB)",
+            "retradedTo": "Gavin",
             "retraded": true
           }
         ]
@@ -5405,18 +5406,18 @@ const TRADE_DATA = [
             "desc": "2023 R1 (Noah's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Quentin Johnston (WR)",
-            "retradedTo": "Evan",
-            "retraded": true
+            "playerName": "Tyjae Spears (RB)",
+            "retradedTo": null,
+            "retraded": false
           },
           {
             "type": "pick",
             "desc": "2023 R1 (Noah's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Quentin Johnston (WR)",
-            "retradedTo": "Evan",
-            "retraded": true
+            "playerName": "De'Von Achane (RB)",
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       },
@@ -5550,7 +5551,7 @@ const TRADE_DATA = [
             "desc": "2023 R1 (Kris's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Jahmyr Gibbs (RB)",
+            "playerName": "Anthony Richardson (QB)",
             "retradedTo": null,
             "retraded": false
           }
@@ -5580,16 +5581,16 @@ const TRADE_DATA = [
             "desc": "2023 R3 (Kris's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Jalin Hyatt (WR)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Puka Nacua (WR)",
+            "retradedTo": "Noah",
+            "retraded": true
           },
           {
             "type": "pick",
             "desc": "2024 R3 (Kris's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Dallas Turner (LB)",
+            "playerName": "Ray Davis (RB)",
             "retradedTo": null,
             "retraded": false
           }
@@ -5692,9 +5693,9 @@ const TRADE_DATA = [
             "desc": "2024 R2 (Ben's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Jaylen Wright (RB)",
-            "retradedTo": "Ryan",
-            "retraded": true
+            "playerName": "Troy Franklin (WR)",
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       }
@@ -5726,8 +5727,8 @@ const TRADE_DATA = [
             "desc": "2023 R2 (Alex's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Sam LaPorta (TE)",
-            "retradedTo": "Ryan",
+            "playerName": "Josh Downs (WR)",
+            "retradedTo": "Noah",
             "retraded": true
           }
         ]
@@ -5756,8 +5757,8 @@ const TRADE_DATA = [
             "desc": "2024 R1 (Jake's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Brock Bowers (TE)",
-            "retradedTo": "Noah",
+            "playerName": "Marvin Harrison (WR)",
+            "retradedTo": "Gavin",
             "retraded": true
           }
         ]
@@ -5786,8 +5787,8 @@ const TRADE_DATA = [
             "desc": "2024 R2 (Ryan's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Ja'Tavion Sanders (TE)",
-            "retradedTo": "Ben",
+            "playerName": "Blake Corum (RB)",
+            "retradedTo": "Gavin",
             "retraded": true
           }
         ]
@@ -5825,9 +5826,9 @@ const TRADE_DATA = [
             "desc": "2023 R3 (Kent's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Jalin Hyatt (WR)",
-            "retradedTo": "Kent",
-            "retraded": true
+            "playerName": "Puka Nacua (WR)",
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       }
@@ -5850,7 +5851,7 @@ const TRADE_DATA = [
             "desc": "2023 R2 (Evan's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Rashee Rice (WR)",
+            "playerName": "Josh Downs (WR)",
             "retradedTo": null,
             "retraded": false
           }
@@ -5877,7 +5878,7 @@ const TRADE_DATA = [
             "desc": "2023 R1 (Noah's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Quentin Johnston (WR)",
+            "playerName": "Zay Flowers (WR)",
             "retradedTo": null,
             "retraded": false
           }
@@ -5910,9 +5911,9 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2023 R1 (Kyle's pick)",
             "future": false,
-            "drafted": false,
-            "playerName": null,
-            "retradedTo": "Jake",
+            "drafted": true,
+            "playerName": "Zay Flowers (WR)",
+            "retradedTo": "Evan",
             "retraded": true
           }
         ]
@@ -5992,7 +5993,7 @@ const TRADE_DATA = [
             "desc": "2023 R2 (Alex's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Sam LaPorta (TE)",
+            "playerName": "Tank Dell (WR)",
             "retradedTo": null,
             "retraded": false
           }
@@ -6030,7 +6031,7 @@ const TRADE_DATA = [
             "desc": "2023 R2 (Bo's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Roschon Johnson (RB)",
+            "playerName": "Bryce Young (QB)",
             "retradedTo": null,
             "retraded": false
           },
@@ -6064,9 +6065,9 @@ const TRADE_DATA = [
             "desc": "2024 R3 (Nolan's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Dallas Turner (LB)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Drake Maye (QB)",
+            "retradedTo": "Ben",
+            "retraded": true
           },
           {
             "type": "pick",
@@ -6120,8 +6121,8 @@ const TRADE_DATA = [
             "desc": "2024 R1 (Alex's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Keon Coleman (WR)",
-            "retradedTo": "Kent",
+            "playerName": "Brock Bowers (TE)",
+            "retradedTo": "Noah",
             "retraded": true
           },
           {
@@ -6129,8 +6130,8 @@ const TRADE_DATA = [
             "desc": "2024 R1 (Alex's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Keon Coleman (WR)",
-            "retradedTo": "Kent",
+            "playerName": "Trey Benson (RB)",
+            "retradedTo": "Noah",
             "retraded": true
           }
         ]
@@ -6163,9 +6164,9 @@ const TRADE_DATA = [
             "desc": "2024 R2 (Kyle's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Xavier Legette (WR)",
-            "retradedTo": "Noah",
-            "retraded": true
+            "playerName": "Blake Corum (RB)",
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       }
@@ -6193,8 +6194,8 @@ const TRADE_DATA = [
             "desc": "2025 R1 (Kent's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Tre Harris (WR)",
-            "retradedTo": "Ben",
+            "playerName": "Ashton Jeanty (RB)",
+            "retradedTo": "Noah",
             "retraded": true
           },
           {
@@ -6202,9 +6203,9 @@ const TRADE_DATA = [
             "desc": "2024 R3 (Kent's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Luke McCaffrey (WR)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Drake Maye (QB)",
+            "retradedTo": "Ben",
+            "retraded": true
           }
         ]
       }
@@ -6257,7 +6258,7 @@ const TRADE_DATA = [
             "desc": "2024 R1 (Gavin's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Brock Bowers (TE)",
+            "playerName": "Trey Benson (RB)",
             "retradedTo": null,
             "retraded": false
           }
@@ -6335,8 +6336,8 @@ const TRADE_DATA = [
             "desc": "2025 R2 (Kent's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Mason Taylor (TE)",
-            "retradedTo": "Noah",
+            "playerName": "Pat Bryant (WR)",
+            "retradedTo": "Kent",
             "retraded": true
           }
         ]
@@ -6454,8 +6455,8 @@ const TRADE_DATA = [
             "desc": "2025 R1 (Bo's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Tre Harris (WR)",
-            "retradedTo": "Ben",
+            "playerName": "Emeka Egbuka (WR)",
+            "retradedTo": "Kyle",
             "retraded": true
           }
         ]
@@ -6479,7 +6480,7 @@ const TRADE_DATA = [
             "desc": "2025 R3 (Gavin's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Elic Ayomanor (WR)",
+            "playerName": "Jalen Royals (WR)",
             "retradedTo": null,
             "retraded": false
           }
@@ -6493,8 +6494,8 @@ const TRADE_DATA = [
             "desc": "2024 R2 (Jake's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Jaylen Wright (RB)",
-            "retradedTo": "Ryan",
+            "playerName": "Ja'Tavion Sanders (TE)",
+            "retradedTo": "Ben",
             "retraded": true
           },
           {
@@ -6532,9 +6533,9 @@ const TRADE_DATA = [
             "desc": "2024 R2 (Noah's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Ricky Pearsall (WR)",
-            "retradedTo": "Alex",
-            "retraded": true
+            "playerName": "Caleb Williams (QB)",
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       }
@@ -6553,9 +6554,9 @@ const TRADE_DATA = [
             "desc": "2025 R1 (Gavin's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Quinshon Judkins (RB)",
-            "retradedTo": "Alex",
-            "retraded": true
+            "playerName": "Emeka Egbuka (WR)",
+            "retradedTo": null,
+            "retraded": false
           },
           {
             "type": "pick",
@@ -6593,7 +6594,7 @@ const TRADE_DATA = [
             "desc": "2025 R1 (Ben's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Omarion Hampton (RB)",
+            "playerName": "Travis Hunter (WR)",
             "retradedTo": "Sirac",
             "retraded": true
           },
@@ -6615,10 +6616,10 @@ const TRADE_DATA = [
             "type": "pick",
             "desc": "2025 R2 (Dylan's pick)",
             "future": false,
-            "drafted": false,
-            "playerName": null,
-            "retradedTo": null,
-            "retraded": false
+            "drafted": true,
+            "playerName": "Jack Bech (WR)",
+            "retradedTo": "Alex",
+            "retraded": true
           }
         ]
       }
@@ -6686,8 +6687,8 @@ const TRADE_DATA = [
             "desc": "2025 R2 (Gavin's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Pat Bryant (WR)",
-            "retradedTo": "Kent",
+            "playerName": "Abdul Carter (DL)",
+            "retradedTo": "Gavin",
             "retraded": true
           },
           {
@@ -6695,8 +6696,8 @@ const TRADE_DATA = [
             "desc": "2025 R2 (Gavin's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Pat Bryant (WR)",
-            "retradedTo": "Kent",
+            "playerName": "Luther Burden (WR)",
+            "retradedTo": "Gavin",
             "retraded": true
           },
           {
@@ -6803,7 +6804,7 @@ const TRADE_DATA = [
             "desc": "2025 R3 (Bo's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Oronde Gadsden (TE)",
+            "playerName": "Kyle Monangai (RB)",
             "retradedTo": null,
             "retraded": false
           },
@@ -6885,7 +6886,7 @@ const TRADE_DATA = [
             "desc": "2025 R1 (Evan's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Tre Harris (WR)",
+            "playerName": "Jayden Higgins (WR)",
             "retradedTo": null,
             "retraded": false
           }
@@ -6903,9 +6904,9 @@ const TRADE_DATA = [
             "desc": "2025 R2 (Ben's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Mason Taylor (TE)",
-            "retradedTo": "Noah",
-            "retraded": true
+            "playerName": "Cameron Ward (QB)",
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       }
@@ -6958,7 +6959,7 @@ const TRADE_DATA = [
             "desc": "2025 R2 (Ben's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Tyler Warren (TE)",
+            "playerName": "Jack Bech (WR)",
             "retradedTo": null,
             "retraded": false
           }
@@ -6993,18 +6994,18 @@ const TRADE_DATA = [
             "desc": "2025 R2 (Noah's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Colston Loveland (TE)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Abdul Carter (DL)",
+            "retradedTo": "Gavin",
+            "retraded": true
           },
           {
             "type": "pick",
             "desc": "2025 R2 (Noah's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Colston Loveland (TE)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Luther Burden (WR)",
+            "retradedTo": "Gavin",
+            "retraded": true
           }
         ]
       },
@@ -7041,9 +7042,9 @@ const TRADE_DATA = [
             "desc": "2025 R2 (Ryan's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Luther Burden (WR)",
-            "retradedTo": null,
-            "retraded": false
+            "playerName": "Colston Loveland (TE)",
+            "retradedTo": "Jake",
+            "retraded": true
           },
           {
             "type": "pick",
@@ -7076,7 +7077,7 @@ const TRADE_DATA = [
             "desc": "2025 R2 (Bo's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Luther Burden (WR)",
+            "playerName": "Jaydon Blue (RB)",
             "retradedTo": null,
             "retraded": false
           },
@@ -7187,9 +7188,9 @@ const TRADE_DATA = [
             "desc": "2025 R1 (Gavin's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Quinshon Judkins (RB)",
-            "retradedTo": "Alex",
-            "retraded": true
+            "playerName": "RJ Harvey (RB)",
+            "retradedTo": null,
+            "retraded": false
           },
           {
             "type": "pick",
@@ -7201,9 +7202,9 @@ const TRADE_DATA = [
             "desc": "2025 R2 (Gavin's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Pat Bryant (WR)",
-            "retradedTo": "Kent",
-            "retraded": true
+            "playerName": "Colston Loveland (TE)",
+            "retradedTo": null,
+            "retraded": false
           }
         ]
       },
@@ -7219,7 +7220,7 @@ const TRADE_DATA = [
             "desc": "2025 R2 (Jake's pick)",
             "future": false,
             "drafted": true,
-            "playerName": "Luther Burden (WR)",
+            "playerName": "Abdul Carter (DL)",
             "retradedTo": null,
             "retraded": false
           },
